@@ -1,0 +1,1 @@
+Учебный проект на курсе https://learn.javascript.ru/courses/react
