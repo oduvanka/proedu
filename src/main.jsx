@@ -1,17 +1,32 @@
 import { createRoot } from "react-dom/client";
+import { restaurants } from "../materials/mock";
 
 const root = document.getElementById("root");
 
 const reactRoot = createRoot(root);
 
-const data = [1, 2, 3, 4, 5];
-
 reactRoot.render(
-  <ul className="someClass" style={{ color: "red" }}>
-    {data.map((item) => (
-      <li key={`li-${item}`}>{item}</li>
-    ))}
-  </ul>
+  <div>
+    <h1>Restraunts</h1>
+    {restaurants.map((restaurant) => {
+      const { id, name, menu, reviews } = restaurant;
+      return (
+        <div key={`restraunt-${id}`}>
+          <h2>{name}</h2>
+          <h3>Menu</h3>
+          <ul>
+            {menu.map((item) => (
+              <li key={`dish-${item.id}`}>{item.name}</li>
+            ))}
+          </ul>
+          <h3>Rewiews</h3>
+          <ul>
+            {reviews.map((item) => (
+              <li key={`review-${item.id}`}>{item.text}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    })}
+  </div>
 );
-
-console.log(reactRoot);
