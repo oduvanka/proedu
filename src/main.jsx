@@ -11,18 +11,18 @@ reactRoot.render(
     {restaurants.map((restaurant) => {
       const { id, name, menu, reviews } = restaurant;
       return (
-        <div key={`restraunt-${id}`}>
+        <div key={id}>
           <h2>{name}</h2>
           <h3>Menu</h3>
           <ul>
             {menu.map((item) => (
-              <li key={`dish-${item.id}`}>{item.name}</li>
+              <li key={item.id}>{item.name}</li>
             ))}
           </ul>
           <h3>Rewiews</h3>
           <ul>
             {reviews.map((item) => (
-              <li key={`review-${item.id}`}>{item.text}</li>
+              <li key={item.id}>{item.text}</li>
             ))}
           </ul>
         </div>
