@@ -1,8 +1,8 @@
 import { useCounter } from "./useCounter";
+import { checkIsMax, checkIsMin } from "./utils";
 
 export const Counter = () => {
-  const { count, onDecrement, onIncrement, checkIsMin, checkIsMax } =
-    useCounter();
+  const { count, onDecrement, onIncrement } = useCounter();
 
   return (
     <div>

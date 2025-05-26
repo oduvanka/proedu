@@ -1,12 +1,11 @@
-import { Content } from "./content";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
-export const Layout = () => {
+export const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <Content />
+      {children}
       <Footer />
     </div>
   );

@@ -1,32 +1,33 @@
-import { useMemo } from "react";
+import { useState } from "react";
 import { restaurants } from "../../../materials/mock";
 import { Restraunt } from "../restraunt/restaurant";
 import { Tabs } from "../tabs/tabs";
-import { useTabs } from "../tabs/useTabs";
 
 export const Content = () => {
-  const { activeElId, onChangeActiveTab } = useTabs(restaurants);
+  const [activeRestrauntId, setActiveRestrauntId] = useState(restaurants[0].id);
 
-  const activeRestraunt = useMemo(
-    () => restaurants.find((item) => item.id === activeElId),
-    [activeElId]
+  if (!restaurants.length) return <div>no restaurants available</div>;
+
+  const activeRestraunt = restaurants.find(
+    (item) => item.id === activeRestrauntId
   );
 
-  const { id, name, menu, reviews } = activeRestraunt;
+  const { name, menu, reviews } = activeRestraunt;
 
   return (
     <main>
       <Tabs
         list={restaurants}
-        activeElId={activeElId}
-        onChangeActiveTab={onChangeActiveTab}
+        activeElId={activeRestrauntId}
+        onChangeActiveTab={setActiveRestrauntId}
       />
 
-      {restaurants.length ? (
-        <Restraunt id={id} name={name} menu={menu} reviews={reviews} />
-      ) : (
-        <div>no restaurants available</div>
-      )}
+      <Restraunt
+        id={activeRestrauntId}
+        name={name}
+        menu={menu}
+        reviews={reviews}
+      />
     </main>
   );
 };
