@@ -1,16 +1,10 @@
-import { Review } from "./rewiew";
+import { ReviewsList } from "./reviews-list";
 
 export const Reviews = ({ reviews }) => {
   return (
     <div>
       <h3>Rewiews</h3>
-      <ul>
-        {reviews.map((item) => (
-          <li key={item.id}>
-            <Review text={item.text} />
-          </li>
-        ))}
-      </ul>
+      <ReviewsList reviews={reviews} />
     </div>
   );
 };
