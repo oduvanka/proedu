@@ -1,16 +1,22 @@
 import { useCounter } from "./useCounter";
 import { checkIsMax, checkIsMin } from "./utils";
 
-export const Counter = () => {
-  const { count, onDecrement, onIncrement } = useCounter();
-
+export const Counter = ({ count, min, max, onDecrement, onIncrement }) => {
   return (
     <div>
-      <button disabled={checkIsMin(count)} onClick={onDecrement}>
+      <button
+        type="button"
+        disabled={checkIsMin(min, count)}
+        onClick={onDecrement}
+      >
         -
       </button>
       {count}
-      <button disabled={checkIsMax(count)} onClick={onIncrement}>
+      <button
+        type="button"
+        disabled={checkIsMax(max, count)}
+        onClick={onIncrement}
+      >
         +
       </button>
     </div>

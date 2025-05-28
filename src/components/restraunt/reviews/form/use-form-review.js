@@ -44,7 +44,8 @@ export const useFormReview = () => {
 
   const onChangeName = (e) => onChangeForm(ACTION.SET_NAME)(e);
   const onChangeText = (e) => onChangeForm(ACTION.SET_TEXT)(e);
-  const onChangeRating = (e) => onChangeForm(ACTION.SET_RATING)(e);
+  const onChangeRating = (value) => () =>
+    dispatch({ type: ACTION.SET_RATING, payload: value });
   const clear = () => dispatch({ type: ACTION.CLEAR });
 
   return { form, onChangeName, onChangeText, onChangeRating, clear };

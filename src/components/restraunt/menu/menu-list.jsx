@@ -1,6 +1,6 @@
 import React from "react";
 import { Dish } from "./dish";
-import { MAX_COUNT } from "../../counter/const";
+import { MAX_COUNT } from "./const";
 
 export const MenuList = ({ menu }) => {
   if (!menu.length) return <p>no data</p>;

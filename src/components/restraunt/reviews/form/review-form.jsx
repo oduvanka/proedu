@@ -1,4 +1,5 @@
-import { MAX_RATING, MIN_RATING } from "./const";
+import { Counter } from "../../../counter/counter";
+import { MAX_RATING, MIN_RATING, STEP_RATING } from "./const";
 import { useFormReview } from "./use-form-review";
 
 export const ReviewForm = () => {
@@ -31,15 +32,13 @@ export const ReviewForm = () => {
       <div>
         <label>
           Rating:
-          <input
-            type="range"
+          <Counter
+            count={rating}
             min={MIN_RATING}
             max={MAX_RATING}
-            step={1}
-            value={rating}
-            onChange={onChangeRating}
+            onDecrement={onChangeRating(rating - STEP_RATING)}
+            onIncrement={onChangeRating(rating + STEP_RATING)}
           />
-          <output>{rating}</output>
         </label>
       </div>
 
