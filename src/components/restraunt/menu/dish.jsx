@@ -3,12 +3,14 @@ import { useCounter } from "../../counter/useCounter";
 import { MAX_COUNT, MIN_COUNT } from "./const";
 
 // Карточка блюда
-export const Dish = ({ dishName }) => {
+export const Dish = ({ dishName, ingredients, price }) => {
   const { count, onDecrement, onIncrement } = useCounter(MIN_COUNT);
 
   return (
     <div>
-      <div>{dishName}</div>
+      <h4>{dishName}</h4>
+      <div>ingredients: {ingredients.join(", ")}</div>
+      <div>{price} y.e.</div>
       <Counter
         count={count}
         min={MIN_COUNT}

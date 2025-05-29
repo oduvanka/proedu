@@ -8,9 +8,9 @@ export const MenuList = ({ menu }) => {
     <>
       <small>no more than {MAX_COUNT} dishes for per person</small>
       <ul>
-        {menu.map((item) => (
-          <li key={item.id}>
-            <Dish dishName={item.name} />
+        {menu.map(({ id, name, ingredients, price }) => (
+          <li key={id}>
+            <Dish dishName={name} ingredients={ingredients} price={price} />
           </li>
         ))}
       </ul>
