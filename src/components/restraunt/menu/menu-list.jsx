@@ -1,4 +1,3 @@
-import React from "react";
 import { Dish } from "./dish";
 import { MAX_COUNT } from "./const";
 
@@ -6,7 +5,7 @@ export const MenuList = ({ menu }) => {
   if (!menu.length) return <p>no data</p>;
 
   return (
-    <React.Fragment>
+    <>
       <small>no more than {MAX_COUNT} dishes for per person</small>
       <ul>
         {menu.map((item) => (
@@ -15,6 +14,6 @@ export const MenuList = ({ menu }) => {
           </li>
         ))}
       </ul>
-    </React.Fragment>
+    </>
   );
 };
