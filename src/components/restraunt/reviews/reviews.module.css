@@ -7,14 +7,14 @@
 
 .review {
   padding: 16px;
-  background-color: #00000009;
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 16px 16px 16px 0;
 }
 .reviewGood {
-  background-color: #4caf5009;
+  background-color: rgba(76, 175, 80, 0.5);
 }
 .reviewBad {
-  background-color: #f4433609;
+  background-color: rgba(244, 67, 54, 0.5);
 }
 
 .rating {

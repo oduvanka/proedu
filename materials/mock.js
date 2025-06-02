@@ -79,6 +79,12 @@ export const restaurants = [
         text: "No burgers",
         rating: 3,
       },
+      {
+        id: "429dea85-11dd-4054-a32e-c60c92e17255",
+        user: "Kate",
+        text: "It is too spicy",
+        rating: 2,
+      },
     ],
   },
   {
