@@ -1,0 +1,40 @@
+textarea {
+  resize: vertical;
+}
+
+.form {
+  padding: 16px;
+  background-color: #00000009;
+  border-radius: 16px 16px 16px 0;
+}
+
+.formGroup {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.formGroup label {
+  width: 100px;
+  margin-right: 8px;
+}
+
+.formGroup input,
+.formGroup textarea {
+  flex: 1;
+}
+
+.buttonToolbar {
+  margin-top: 16px;
+}
+
+.buttonToolbar button {
+  margin-right: 16px;
+  padding: 8px 16px;
+  background-color: #212121;
+  border: 0;
+  color: #f5f5f5;
+}
+
+.buttonToolbar .mainBtn {
+  background-color: #ff5722;
+}

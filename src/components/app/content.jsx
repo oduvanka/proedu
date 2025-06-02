@@ -15,7 +15,7 @@ export const Content = () => {
   const { name, menu, reviews } = activeRestraunt;
 
   return (
-    <main>
+    <main className="content">
       <Tabs
         list={restaurants}
         activeElId={activeRestrauntId}

@@ -1,11 +1,12 @@
 // Карточка отзыва
+import styles from "./reviews.module.css";
 
 export const Review = ({ name, text, rating }) => {
   return (
-    <div>
-      <h4>{name}</h4>
-      <div>{text}</div>
-      <div>{rating}</div>
+    <div className={styles.review}>
+      <span className={styles.rating}>{rating}</span>
+      <span className={styles.text}>{text}</span>
+      <small className="secondary-text"> ({name})</small>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useCounter } from "./useCounter";
+import styles from "./counter.module.css";
 import { checkIsMax, checkIsMin } from "./utils";
 
 export const Counter = ({ count, min, max, onDecrement, onIncrement }) => {
@@ -8,14 +8,16 @@ export const Counter = ({ count, min, max, onDecrement, onIncrement }) => {
         type="button"
         disabled={checkIsMin(min, count)}
         onClick={onDecrement}
+        className={styles.btnCounter}
       >
         -
       </button>
-      {count}
+      <span className={styles.count}>{count}</span>
       <button
         type="button"
         disabled={checkIsMax(max, count)}
         onClick={onIncrement}
+        className={styles.btnCounter}
       >
         +
       </button>
