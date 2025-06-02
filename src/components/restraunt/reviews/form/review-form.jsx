@@ -19,7 +19,7 @@ export const ReviewForm = () => {
     <form onSubmit={handleSubmit} className={styles.form}>
       <p>Leave your review</p>
       <div className={styles.formGroup}>
-        <label for="name">Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
           id="name"
           type="text"
@@ -29,7 +29,7 @@ export const ReviewForm = () => {
         />
       </div>
       <div className={styles.formGroup}>
-        <label for="text">Text:</label>
+        <label htmlFor="text">Text:</label>
         <textarea id="text" required value={text} onChange={onChangeText} />
       </div>
       <div className={styles.formGroup}>
