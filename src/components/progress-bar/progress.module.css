@@ -1,0 +1,11 @@
+.progress {
+  width: 100%;
+  height: 4px;
+  background-color: #bdbdbd;
+}
+
+.bar {
+  max-width: inherit;
+  height: inherit;
+  background-color: #ff5722;
+}

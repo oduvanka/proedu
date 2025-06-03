@@ -16,10 +16,22 @@ ul {
   list-style-type: none;
 }
 
+.wrap-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .header {
   padding: 16px;
   background-color: #616161;
   color: #f5f5f5;
+}
+
+.wrap-content {
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .content {
