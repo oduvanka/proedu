@@ -1,16 +1,16 @@
+import { useEffect, useRef } from "react";
 import { ProgressBar } from "../progress-bar/progress-bar";
-import { useProgressBar } from "../progress-bar/useProgressBar";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
 export const Layout = ({ children }) => {
-  const { progress, handleScroll } = useProgressBar();
+  const contentRef = useRef(null);
 
   return (
     <div className="wrap-layout">
       <Header />
-      <ProgressBar progress={progress} />
-      <div className="wrap-content" onScroll={handleScroll}>
+      <ProgressBar scrollAreaRef={contentRef} />
+      <div className="wrap-content" ref={contentRef}>
         {children}
         <Footer />
       </div>
