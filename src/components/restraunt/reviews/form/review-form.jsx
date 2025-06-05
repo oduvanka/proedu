@@ -2,6 +2,7 @@ import { Counter } from "../../../counter/counter";
 import { MAX_RATING, MIN_RATING, STEP_RATING } from "./const";
 import { useFormReview } from "./use-form-review";
 import styles from "./form.module.css";
+import { Button } from "../../../button/button";
 
 export const ReviewForm = () => {
   const { form, onChangeName, onChangeText, onChangeRating, clear } =
@@ -44,12 +45,10 @@ export const ReviewForm = () => {
       </div>
 
       <div className={styles.buttonToolbar}>
-        <button type="button" onClick={clear}>
+        <Button type="button" onClick={clear}>
           Clear
-        </button>
-        <button type="submit" className={styles.mainBtn}>
-          Submit
-        </button>
+        </Button>
+        <Button type="submit">Submit</Button>
       </div>
     </form>
   );

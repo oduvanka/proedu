@@ -1,4 +1,11 @@
 .progressBar {
   height: 4px;
+}
+
+.progressBarJuicy {
   background-color: #ff5722;
+}
+
+.progressBarBarbie {
+  background-color: #e91e63;
 }

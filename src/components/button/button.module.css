@@ -1,0 +1,40 @@
+.buttonDefault {
+  border: 0;
+  border-radius: 4px;
+
+  color: #f5f5f5;
+
+  cursor: pointer;
+}
+
+.buttonJuicy {
+  background-color: #ff9800;
+}
+
+.buttonJuicy:disabled {
+  background-color: #ffccbc;
+}
+
+.buttonJuicy[type="submit"] {
+  background-color: #e64a19;
+}
+
+.buttonLarge {
+  padding: 8px 16px;
+}
+
+.buttonSmall {
+  padding: 4px 8px;
+}
+
+.buttonBarbie {
+  background-color: #ff4081;
+}
+
+.buttonBarbie:disabled {
+  background-color: #f8bbd0;
+}
+
+.buttonBarbie[type="submit"] {
+  background-color: #c2185b;
+}

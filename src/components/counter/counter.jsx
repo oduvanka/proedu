@@ -1,26 +1,27 @@
+import { Button } from "../button/button";
 import styles from "./counter.module.css";
 import { checkIsMax, checkIsMin } from "./utils";
 
 export const Counter = ({ count, min, max, onDecrement, onIncrement }) => {
   return (
     <div>
-      <button
+      <Button
         type="button"
+        isSmall={true}
         disabled={checkIsMin(min, count)}
         onClick={onDecrement}
-        className={styles.btnCounter}
       >
         -
-      </button>
+      </Button>
       <span className={styles.count}>{count}</span>
-      <button
+      <Button
         type="button"
+        isSmall={true}
         disabled={checkIsMax(max, count)}
         onClick={onIncrement}
-        className={styles.btnCounter}
       >
         +
-      </button>
+      </Button>
     </div>
   );
 };
