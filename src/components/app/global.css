@@ -31,6 +31,10 @@ ul {
   color: #f5f5f5;
 }
 
+.buttonInHeader {
+  margin-left: 8px;
+}
+
 .wrap-content {
   height: 100%;
   flex: 1;

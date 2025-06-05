@@ -9,8 +9,7 @@ export const Button = ({ isSmall, children, ...props }) => {
   return (
     <button
       {...props}
-      className={classNames({
-        [styles.buttonDefault]: true,
+      className={classNames(styles.buttonDefault, props.className, {
         [styles.buttonLarge]: !isSmall,
         [styles.buttonSmall]: isSmall,
         [styles.buttonJuicy]: theme === THEMES.light,
