@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { Button } from "../button/button";
-import { THEMES, ThemeContext } from "../theme/theme-context";
-import { AuthContext, INIT_AUTH } from "../auth/auth-context";
+import styles from "./header.module.css";
+import { Button } from "../../button/button";
+import { THEMES, ThemeContext } from "../../theme/theme-context";
+import { AuthContext, INIT_AUTH } from "../../auth/auth-context";
+import { HelpText } from "../../helpText/help-text";
 
 export const Header = () => {
   const { setTheme } = useContext(ThemeContext);
@@ -23,21 +25,21 @@ export const Header = () => {
   const { isAuthorized } = auth;
 
   return (
-    <header className="header">
+    <header className={styles.header}>
       <h1>PROEDU</h1>
-      <small>aggregator of food delivery from restraunts</small>
+      <HelpText>aggregator of food delivery from restraunts</HelpText>
       <div>
         <Button
           isSmall={true}
           onClick={handleToggleTheme}
-          className="buttonInHeader"
+          className={styles.buttonInHeader}
         >
           <small>Toggle theme</small>
         </Button>
         <Button
           isSmall={true}
           onClick={isAuthorized ? handleLogout : handleLogin}
-          className="buttonInHeader"
+          className={styles.buttonInHeader}
         >
           <small>{isAuthorized ? `Logout (${auth.name})` : "Login"}</small>
         </Button>

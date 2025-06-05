@@ -1,6 +1,7 @@
 // Карточка отзыва
 import classNames from "classnames";
 import styles from "./reviews.module.css";
+import { HelpText } from "../../helpText/help-text";
 
 export const Review = ({ name, text, rating }) => {
   const isGood = rating >= 4;
@@ -16,7 +17,7 @@ export const Review = ({ name, text, rating }) => {
     <div className={reviewClass}>
       <span className={styles.rating}>{rating}</span>
       <span className={styles.text}>{text}</span>
-      <small className="secondary-text"> ({name})</small>
+      <HelpText> ({name})</HelpText>
     </div>
   );
 };
