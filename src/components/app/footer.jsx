@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <footer>
-      <small>we use cookies</small>
+    <footer className="footer">
+      <small className="secondary-text">we use cookies</small>
     </footer>
   );
 };

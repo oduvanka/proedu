@@ -1,0 +1,41 @@
+.menu {
+  display: flex;
+  gap: 16px 16px;
+
+  flex-wrap: wrap;
+}
+
+.menu li {
+  flex: 0 0 calc(33% - 8px);
+}
+
+.card {
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  color: #ff9800;
+}
+
+.name {
+  margin-right: 8px;
+}
+
+.price {
+  white-space: nowrap;
+}
+
+.ingredients {
+  margin-bottom: 8px;
+  color: #757575;
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+}

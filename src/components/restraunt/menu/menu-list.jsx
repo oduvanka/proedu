@@ -1,3 +1,4 @@
+import styles from "./menu.module.css";
 import { Dish } from "./dish";
 import { MAX_COUNT } from "./const";
 
@@ -6,11 +7,13 @@ export const MenuList = ({ menu }) => {
 
   return (
     <>
-      <small>no more than {MAX_COUNT} dishes for per person</small>
-      <ul>
-        {menu.map((item) => (
-          <li key={item.id}>
-            <Dish dishName={item.name} />
+      <small className="secondary-text">
+        no more than {MAX_COUNT} dishes for per person
+      </small>
+      <ul className={styles.menu}>
+        {menu.map(({ id, name, ingredients, price }) => (
+          <li key={id}>
+            <Dish dishName={name} ingredients={ingredients} price={price} />
           </li>
         ))}
       </ul>

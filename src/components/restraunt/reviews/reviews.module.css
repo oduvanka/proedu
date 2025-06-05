@@ -1,0 +1,27 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 16px 16px;
+  margin-bottom: 16px;
+}
+
+.review {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 16px 16px 16px 0;
+}
+.reviewGood {
+  background-color: rgba(76, 175, 80, 0.5);
+}
+.reviewBad {
+  background-color: rgba(244, 67, 54, 0.5);
+}
+
+.rating {
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+.text {
+  font-style: italic;
+}
