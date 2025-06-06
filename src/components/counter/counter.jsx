@@ -7,7 +7,7 @@ export const Counter = ({ count, min, max, onDecrement, onIncrement }) => {
     <div>
       <Button
         type="button"
-        isSmall={true}
+        isSmall
         disabled={checkIsMin(min, count)}
         onClick={onDecrement}
       >
@@ -16,7 +16,7 @@ export const Counter = ({ count, min, max, onDecrement, onIncrement }) => {
       <span className={styles.count}>{count}</span>
       <Button
         type="button"
-        isSmall={true}
+        isSmall
         disabled={checkIsMax(max, count)}
         onClick={onIncrement}
       >
