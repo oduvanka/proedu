@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { restaurants } from "../../../materials/mock";
-import { Restraunt } from "../restraunt/restaurant";
-import { Tabs } from "../tabs/tabs";
+import styles from "./content.module.css";
+import { restaurants } from "../../../../materials/mock";
+import { Restraunt } from "../../restraunt/restaurant";
+import { Tabs } from "../../tabs/tabs";
 
 export const Content = () => {
   const [activeRestrauntId, setActiveRestrauntId] = useState(restaurants[0].id);
@@ -15,7 +16,7 @@ export const Content = () => {
   const { name, menu, reviews } = activeRestraunt;
 
   return (
-    <main className="content">
+    <main className={styles.content}>
       <Tabs
         list={restaurants}
         activeElId={activeRestrauntId}

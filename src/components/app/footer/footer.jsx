@@ -1,6 +1,8 @@
+import styles from "./footer.module.css";
+
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <small className="secondary-text">we use cookies</small>
     </footer>
   );

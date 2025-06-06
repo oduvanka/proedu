@@ -29,12 +29,4 @@ textarea {
 
 .buttonToolbar button {
   margin-right: 16px;
-  padding: 8px 16px;
-  background-color: #212121;
-  border: 0;
-  color: #f5f5f5;
-}
-
-.buttonToolbar .mainBtn {
-  background-color: #ff5722;
 }
