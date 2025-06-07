@@ -1,15 +1,15 @@
 import React from "react";
-import { Review } from "./rewiew";
 import styles from "./reviews.module.css";
+import { ReviewContainer } from "./review-container";
 
 export const ReviewsList = ({ reviews }) => {
   if (!reviews.length) return <p>no data</p>;
 
   return (
     <ul className={styles.reviews}>
-      {reviews.map(({ id, user, text, rating }) => (
+      {reviews.map((id) => (
         <li key={id}>
-          <Review name={user} text={text} rating={rating} />
+          <ReviewContainer id={id} />
         </li>
       ))}
     </ul>

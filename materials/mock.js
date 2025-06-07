@@ -22,19 +22,19 @@ export const restaurants = [
         ingredients: ["chicken", "bread"],
       },
       {
-        id: "bd129641-c0eb-432b-84b6-8b81d2910358",
+        id: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
         name: "Biriyani",
         price: 12,
         ingredients: ["shrimp"],
       },
       {
-        id: "bd129641-c0eb-432b-84b6-8b81d2930318",
+        id: "b7c8d9e0-f1g2-h3i4-j5k6-l7m8n9o0p1q2",
         name: "Salmon tikka",
         price: 12,
         ingredients: ["fillet", "ginger", "garlic", "lemon", "coconut sauce"],
       },
       {
-        id: "bd129641-c0eb-432b-84b6-8b81d2930351",
+        id: "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r",
         name: "Rogan Josh",
         price: 12,
         ingredients: [
@@ -48,19 +48,19 @@ export const restaurants = [
       },
 
       {
-        id: "bd129641-c0eb-432b-84b6-8b81d2930352",
+        id: "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s",
         name: "Kulfi",
         price: 5,
         ingredients: ["mango"],
       },
       {
-        id: "bd129641-c0eb-432b-84b6-8b81d2930353",
+        id: "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t",
         name: "Jalebi",
         price: 5,
         ingredients: ["saffron", "turmeric"],
       },
       {
-        id: "bd129641-c0eb-432b-84b6-8b81d2930354",
+        id: "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u",
         name: "Ras malai",
         price: 5,
         ingredients: ["cheese", "creamy syrup"],
@@ -80,7 +80,7 @@ export const restaurants = [
         rating: 3,
       },
       {
-        id: "429dea85-11dd-4054-a32e-c60c92e17255",
+        id: "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v",
         user: "Kate",
         text: "It is too spicy",
         rating: 2,
