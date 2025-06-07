@@ -6,10 +6,17 @@ export const normalizedRestaurants = [
       "d75f762a-eadd-49be-8918-ed0daa8dd024",
       "c3cb8f92-a2ed-4716-92a1-b6ea813e9049",
       "bd129641-c0eb-432b-84b6-8b81d2930358",
+      "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+      "b7c8d9e0-f1g2-h3i4-j5k6-l7m8n9o0p1q2",
+      "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r",
+      "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s",
+      "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t",
+      "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u",
     ],
     reviews: [
       "5909796d-5030-4e36-adec-68b8f9ec2d96",
       "429dea85-11dd-4054-a31e-c60c92e17255",
+      "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v",
     ],
   },
   {
@@ -69,6 +76,42 @@ export const normalizedDishes = [
     ingredients: ["chicken", "bread"],
   },
   {
+    id: "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    name: "Biriyani",
+    price: 12,
+    ingredients: ["shrimp"],
+  },
+  {
+    id: "b7c8d9e0-f1g2-h3i4-j5k6-l7m8n9o0p1q2",
+    name: "Salmon tikka",
+    price: 12,
+    ingredients: ["fillet", "ginger", "garlic", "lemon", "coconut sauce"],
+  },
+  {
+    id: "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r",
+    name: "Rogan Josh",
+    price: 12,
+    ingredients: ["lamb", "tomatoes", "onions", "garlic", "ginger", "spices"],
+  },
+  {
+    id: "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s",
+    name: "Kulfi",
+    price: 5,
+    ingredients: ["mango"],
+  },
+  {
+    id: "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t",
+    name: "Jalebi",
+    price: 5,
+    ingredients: ["saffron", "turmeric"],
+  },
+  {
+    id: "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u",
+    name: "Ras malai",
+    price: 5,
+    ingredients: ["cheese", "creamy syrup"],
+  },
+  {
     id: "25402233-0095-49ea-9939-1e67ed89ffb9",
     name: "Margarita",
     price: 9,
@@ -126,6 +169,12 @@ export const normalizedReviews = [
     rating: 3,
   },
   {
+    id: "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v",
+    userId: "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w",
+    text: "It is too spicy",
+    rating: 2,
+  },
+  {
     id: "53b642d7-5e86-4717-a466-0640a1dee076",
     userId: "20bed9b5-9c7b-4771-8221-75b74ed1904a",
     text: "Perfect Margarita",
@@ -171,6 +220,10 @@ export const normalizedUsers = [
   {
     id: "20bed9b5-9c7b-4771-8221-75b74ed1904a",
     name: "Diana",
+  },
+  {
+    id: "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w",
+    name: "Kate",
   },
   {
     id: "c3d4abd4-c3ef-46e1-8719-eb17db1d6e99",
