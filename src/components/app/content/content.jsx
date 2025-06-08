@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./content.module.css";
-import { Tabs } from "../../tabs/tabs";
+import { RestrauntTabs } from "../../tabs/restraunt-tabs";
 import { useSelector } from "react-redux";
 import { selectRestrauntIds } from "../../../redux/entities/restraunt/slice";
 import { RestrauntContainer } from "../../restraunt/restaurant-container";
@@ -13,7 +13,7 @@ export const Content = () => {
 
   return (
     <main className={styles.content}>
-      <Tabs
+      <RestrauntTabs
         list={restrauntIds}
         activeElId={activeRestrauntId}
         onChangeActiveTab={setActiveRestrauntId}
