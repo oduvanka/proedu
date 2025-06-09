@@ -1,34 +1,25 @@
 import { useState } from "react";
 import styles from "./content.module.css";
-import { restaurants } from "../../../../materials/mock";
-import { Restraunt } from "../../restraunt/restaurant";
-import { Tabs } from "../../tabs/tabs";
+import { RestrauntTabs } from "../../tabs/restraunt-tabs";
+import { useSelector } from "react-redux";
+import { selectRestrauntIds } from "../../../redux/entities/restraunt/slice";
+import { RestrauntContainer } from "../../restraunt/restaurant-container";
 
 export const Content = () => {
-  const [activeRestrauntId, setActiveRestrauntId] = useState(restaurants[0].id);
+  const restrauntIds = useSelector(selectRestrauntIds);
+  const [activeRestrauntId, setActiveRestrauntId] = useState(restrauntIds[0]);
 
-  if (!restaurants.length) return <div>no restaurants available</div>;
-
-  const activeRestraunt = restaurants.find(
-    (item) => item.id === activeRestrauntId
-  );
-
-  const { name, menu, reviews } = activeRestraunt;
+  if (!restrauntIds.length) return <div>no restaurants available</div>;
 
   return (
     <main className={styles.content}>
-      <Tabs
-        list={restaurants}
+      <RestrauntTabs
+        list={restrauntIds}
         activeElId={activeRestrauntId}
         onChangeActiveTab={setActiveRestrauntId}
       />
 
-      <Restraunt
-        id={activeRestrauntId}
-        name={name}
-        menu={menu}
-        reviews={reviews}
-      />
+      <RestrauntContainer key={activeRestrauntId} id={activeRestrauntId} />
     </main>
   );
 };
