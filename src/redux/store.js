@@ -3,6 +3,7 @@ import { restrauntSlice } from "./entities/restraunt/slice";
 import { dishSlice } from "./entities/dish/slice";
 import { reviewSlice } from "./entities/review/slice";
 import { userSlice } from "./entities/user/slice";
+import { cartSlice } from "./entities/cart/slice";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     [dishSlice.name]: dishSlice.reducer,
     [reviewSlice.name]: reviewSlice.reducer,
     [userSlice.name]: userSlice.reducer,
+    [cartSlice.name]: cartSlice.reducer,
   },
 });

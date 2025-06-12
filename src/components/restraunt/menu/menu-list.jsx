@@ -8,7 +8,9 @@ export const MenuList = ({ menu }) => {
 
   return (
     <>
-      <HelpText>no more than {MAX_COUNT} dishes for per person</HelpText>
+      <div className={styles.maxDishes}>
+        <HelpText>no more than {MAX_COUNT} dishes for per person</HelpText>
+      </div>
       <ul className={styles.menu}>
         {menu.map((id) => (
           <li key={id}>

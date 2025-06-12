@@ -7,5 +7,5 @@ export const DishContainer = ({ id }) => {
 
   const { name, ingredients, price } = dish;
 
-  return <Dish dishName={name} ingredients={ingredients} price={price} />;
+  return <Dish id={id} name={name} ingredients={ingredients} price={price} />;
 };

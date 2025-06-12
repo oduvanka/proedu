@@ -12,10 +12,15 @@ h6 {
 }
 
 ul {
+  margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 .hidden {
   display: none;
+}
+
+.wrapper {
+  margin-bottom: 16px;
 }
