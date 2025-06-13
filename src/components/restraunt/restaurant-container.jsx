@@ -7,7 +7,7 @@ export const RestrauntContainer = ({ id }) => {
   const restraunt =
     useSelector((state) => selectRestrauntById(state, id)) || {};
 
-  const { name, menu, reviews } = restraunt;
+  const { name } = restraunt;
 
-  return <Restraunt name={name} menu={menu} reviews={reviews} />;
+  return <Restraunt name={name} />;
 };

@@ -1,15 +1,20 @@
 // Карточка ресторана
-import { Menu } from "./menu/menu";
-import { Reviews } from "./reviews/reviews";
+import styles from "./restraunt.module.css";
+import { Tabs } from "../tabs/tabs";
+import { Tab } from "../tabs/tab";
+import { Outlet } from "react-router";
 
-export const Restraunt = ({ name, menu, reviews }) => {
+export const Restraunt = ({ name }) => {
   return (
     <div>
-      <h2>{name}</h2>
-      <div className="wrapper">
-        <Menu menu={menu} />
-      </div>
-      <Reviews reviews={reviews} />
+      <h2 className={styles.restrauntHeader}>{name}</h2>
+
+      <Tabs>
+        <Tab url="menu" text="Menu" />
+        <Tab url="reviews" text="Reviews" />
+      </Tabs>
+
+      <Outlet />
     </div>
   );
 };
