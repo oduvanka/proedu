@@ -1,3 +1,7 @@
+.reviewsHeader {
+  margin-bottom: 8px;
+}
+
 .reviews {
   display: flex;
   flex-direction: column;

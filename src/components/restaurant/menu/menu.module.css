@@ -1,3 +1,7 @@
+.maxDishes {
+  margin-bottom: 8px;
+}
+
 .menu {
   display: flex;
   gap: 16px 16px;
