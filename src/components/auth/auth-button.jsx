@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "./auth-context";
 import { Button } from "../button/button";
 
-export const BtnAuth = ({ isSmall }) => {
+export const AuthButton = ({ isSmall }) => {
   const { auth, toogleAuth } = useContext(AuthContext);
 
   const { isAuthorized, name } = auth;

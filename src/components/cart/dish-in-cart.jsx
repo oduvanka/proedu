@@ -11,7 +11,7 @@ export const DishInCart = ({ id, amount }) => {
   const { name, price } = dish;
 
   return (
-    <React.Fragment>
+    <>
       <span>
         {name} <HelpText>( x{amount} )</HelpText>
       </span>
@@ -19,6 +19,6 @@ export const DishInCart = ({ id, amount }) => {
       <span>
         = {amount * price} {CURRENCY}
       </span>
-    </React.Fragment>
+    </>
   );
 };

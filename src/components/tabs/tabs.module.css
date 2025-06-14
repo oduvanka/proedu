@@ -18,7 +18,7 @@
   background-color: #ff9800;
 }
 
-.isActiveJuicy {
+.tabJuicy.isActive {
   background-color: #ffccbc;
   pointer-events: none;
 }
@@ -27,7 +27,7 @@
   background-color: #ff4081;
 }
 
-.isActiveBarbie {
+.tabBarbie.isActive {
   background-color: #f8bbd0;
   pointer-events: none;
 }

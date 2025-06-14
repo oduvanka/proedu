@@ -1,19 +1,23 @@
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router";
 import styles from "./padges.module.css";
-import { BtnAuth } from "../components/auth/button-auth";
-import { useContext } from "react";
+import { AuthButton } from "../components/auth/auth-button";
 import { AuthContext } from "../components/auth/auth-context";
-import { Navigate, useNavigate } from "react-router";
 
 export const HomePage = () => {
+  let navigate = useNavigate();
+
   const { auth } = useContext(AuthContext);
 
-  if (auth.isAuthorized) return <Navigate to="restraunts" replace />;
+  useEffect(() => {
+    if (auth.isAuthorized) navigate("restaurants", { replace: true });
+  }, [auth.isAuthorized, navigate]);
 
   return (
     <div className={styles.homePage}>
       <div className={styles.homePageContent}>
         <p>Hello!</p>
-        <BtnAuth isSmall={false} />
+        <AuthButton isSmall={false} />
       </div>
     </div>
   );

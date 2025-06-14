@@ -1,19 +1,18 @@
 import "normalize.css";
 import "./global.css";
-import { Restraunts } from "../restraunts/restraunts";
+import { Restaurants } from "../restaurants/restaurants";
 import { Layout } from "./layout/layout";
 import { ThemeProvider } from "../theme/theme-provider";
 import { AuthProvider } from "../auth/auth-provider";
 import { Provider } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import { store } from "../../redux/store";
-import { RestrauntPage } from "../../pages/restraunt-page";
+import { RestaurantPage } from "../../pages/restaurant-page";
 import { NotFoundPage } from "./404.jsx";
 import { DishPage } from "../../pages/dish-page";
 import { MenuPage } from "../../pages/menu-page";
 import { ReviewsPage } from "../../pages/reviews-page";
 import { HomePage } from "../../pages/home-page";
-import { useContext } from "react";
 
 export const App = () => {
   return (
@@ -24,8 +23,8 @@ export const App = () => {
             <Routes>
               <Route element={<Layout />}>
                 <Route path="/" index element={<HomePage />} />
-                <Route path="restraunts" element={<Restraunts />}>
-                  <Route path=":restrauntId" element={<RestrauntPage />}>
+                <Route path="restaurants" element={<Restaurants />}>
+                  <Route path=":restaurantId" element={<RestaurantPage />}>
                     <Route index element={<Navigate to="menu" replace />} />
                     <Route path="menu" index element={<MenuPage />} />
                     <Route path="reviews" element={<ReviewsPage />} />

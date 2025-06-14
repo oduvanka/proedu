@@ -1,10 +1,10 @@
 import { useParams } from "react-router";
-import { ReviewsContainer } from "../components/restraunt/reviews/reviews-container";
+import { ReviewsContainer } from "../components/restaurant/reviews/reviews-container";
 
 export const ReviewsPage = () => {
-  const { restrauntId } = useParams();
+  const { restaurantId } = useParams();
 
-  if (!restrauntId) return null;
+  if (!restaurantId) return null;
 
-  return <ReviewsContainer id={restrauntId} />;
+  return <ReviewsContainer id={restaurantId} />;
 };
