@@ -1,3 +1,5 @@
+export const SERVER = "http://localhost:3001/api";
+
 export const REQUEST_URL = {
   RESTAURANTS: () => `/restaurants`,
   RESTAURANT: (restaurantId) => `/restaurant/${restaurantId}`,
@@ -10,6 +12,13 @@ export const REQUEST_URL = {
   REVIEW: (reviewId) => `/review/${reviewId}`,
 
   USERS: () => `/users`,
+};
+
+export const REQUEST_STATUS = {
+  IDLE: "idle",
+  PENDING: "pending",
+  FULFILLED: "fulfilled",
+  ERROR: "rejected",
 };
 
 export const CURRENCY = "y.e.";
