@@ -31,8 +31,6 @@ export const requestSlice = createSlice({
           state[meta.requestId] = REQUEST_STATUS.ERROR;
         }
       ),
-
-  condition: (_, { getState }) => selectRestaurantsIds(getState().length === 0),
 });
 
 export const { selectRequestStatus } = requestSlice.selectors;

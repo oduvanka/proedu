@@ -11,14 +11,20 @@ import {
 import { getRestaurants } from "../../redux/entities/restaurant/get-restaurants";
 import { REQUEST_STATUS } from "../app/const";
 import { useRequest } from "../../redux/hooks/use-request";
+import { Loader } from "../loader/loader";
+import { ErrorReject } from "../errors/error-reject";
 
 export const Restaurants = () => {
   const restaurantIds = useSelector(selectRestaurantsIds);
 
   const requestStatus = useRequest(getRestaurants);
 
-  if (requestStatus === REQUEST_STATUS.PENDING) return <div>loading...</div>;
-  if (requestStatus === REQUEST_STATUS.ERROR) return <div>error</div>;
+  if (
+    requestStatus === REQUEST_STATUS.IDLE ||
+    requestStatus === REQUEST_STATUS.PENDING
+  )
+    return <Loader />;
+  if (requestStatus === REQUEST_STATUS.ERROR) return <ErrorReject />;
   if (!restaurantIds.length) return <div>no restaurants available</div>;
 
   return (

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { REQUEST_URL, SERVER } from "../../../components/app/const";
 
-export const getRestaurants = createAsyncThunk(
-  "restaurants/getRestaurants",
+export const getUsers = createAsyncThunk(
+  "users/getUsers",
   async (_, rejectWithValue, dispatch, getState) => {
-    const api = REQUEST_URL.RESTAURANTS();
+    const api = REQUEST_URL.USERS();
     const response = await fetch(`${SERVER}${api}`);
 
     const result = await response.json();
@@ -13,8 +13,4 @@ export const getRestaurants = createAsyncThunk(
 
     return result;
   }
-  //{
-  //    condition: (_, { getState }) =>
-  //    selectRestaurantsIds(getState().length === 0),
-  //}
 );
