@@ -1,6 +1,7 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { REQUEST_STATUS } from "../../../components/app/const";
 import { getDishes } from "./get-dishes";
+import { getDish } from "./get-dish";
 
 const entityAdapter = createEntityAdapter();
 
@@ -13,9 +14,13 @@ export const dishSlice = createSlice({
     selectRequestStatus: (state) => state.requestStatus,
   },
   extraReducers: (builder) =>
-    builder.addCase(getDishes.fulfilled, (state, { payload }) => {
-      entityAdapter.setAll(state, payload);
-    }),
+    builder
+      .addCase(getDishes.fulfilled, (state, { payload }) => {
+        entityAdapter.setAll(state, payload);
+      })
+      .addCase(getDish.fulfilled, (state, { payload }) => {
+        entityAdapter.setAll(state, payload);
+      }),
 });
 
 const selectDishSlice = (state) => state[dishSlice.name];

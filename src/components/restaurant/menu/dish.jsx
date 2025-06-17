@@ -8,13 +8,10 @@ import { AuthContext } from "../../auth/auth-context";
 import { CURRENCY } from "../../app/const";
 
 // Карточка блюда
-export const Dish = ({ id, name, ingredients, price }) => {
+export const Dish = ({ id, name, ingredients, price, isDishPage }) => {
   const { auth } = useContext(AuthContext);
-  const { pathname } = useLocation();
 
   const { count, onDecrement, onIncrement } = useCounter(id, price);
-
-  const isDishPage = pathname === `/dish/${id}`;
 
   return (
     <div className={styles.card}>
