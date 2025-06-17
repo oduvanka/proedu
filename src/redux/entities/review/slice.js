@@ -2,11 +2,11 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { getReviews } from "./get-reviews";
 import { REQUEST_STATUS } from "../../../components/app/const";
 
-const entitiAdapter = createEntityAdapter();
+const entityAdapter = createEntityAdapter();
 
 export const reviewSlice = createSlice({
   name: "reviewSlice",
-  initialState: entitiAdapter.getInitialState({
+  initialState: entityAdapter.getInitialState({
     requestStatus: REQUEST_STATUS.IDLE,
   }),
   selectors: {
@@ -14,13 +14,13 @@ export const reviewSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder.addCase(getReviews.fulfilled, (state, { payload }) => {
-      entitiAdapter.setAll(state, payload);
+      entityAdapter.setAll(state, payload);
     }),
 });
 
 const selectReviewSlice = (state) => state[reviewSlice.name];
 
 export const { selectById: selectReviewById } =
-  entitiAdapter.getSelectors(selectReviewSlice);
+  entityAdapter.getSelectors(selectReviewSlice);
 
 export const { selectRequestStatus } = reviewSlice.selectors;

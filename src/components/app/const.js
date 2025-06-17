@@ -1,17 +1,16 @@
 export const SERVER = "http://localhost:3001/api";
 
 export const REQUEST_URL = {
-  RESTAURANTS: () => `/restaurants`,
-  RESTAURANT: (restaurantId) => `/restaurant/${restaurantId}`,
+  RESTAURANTS: "/restaurants", // GET
+  RESTAURANT: "/restaurant", // GET (params restaurantId)
 
-  DISHES: () => `/dishes`,
-  DISH: (dishId) => `/dish/${dishId}`,
+  DISHES: "/dishes", // GET (query restaurantId, dishId)
+  DISH: "/dish", // GET (params dishId)
 
-  REVIEWS: () => `/reviews`,
-  RESTAURANT_REVIEWS: (restaurantId) => `/review/${restaurantId}`,
-  REVIEW: (reviewId) => `/review/${reviewId}`,
+  REVIEWS: "/reviews", // GET (query restaurantId)
+  REVIEW: "/review", // POST (params restaurantId), PATCH (params reviewId)
 
-  USERS: () => `/users`,
+  USERS: "/users", // GET
 };
 
 export const REQUEST_STATUS = {

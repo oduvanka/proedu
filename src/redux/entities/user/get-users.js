@@ -4,7 +4,7 @@ import { REQUEST_URL, SERVER } from "../../../components/app/const";
 export const getUsers = createAsyncThunk(
   "users/getUsers",
   async (_, rejectWithValue, dispatch, getState) => {
-    const api = REQUEST_URL.USERS();
+    const api = REQUEST_URL.USERS;
     const response = await fetch(`${SERVER}${api}`);
 
     const result = await response.json();

@@ -2,11 +2,11 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { REQUEST_STATUS } from "../../../components/app/const";
 import { getDishes } from "./get-dishes";
 
-const entitiAdapter = createEntityAdapter();
+const entityAdapter = createEntityAdapter();
 
 export const dishSlice = createSlice({
   name: "dishSlice",
-  initialState: entitiAdapter.getInitialState({
+  initialState: entityAdapter.getInitialState({
     requestStatus: REQUEST_STATUS.IDLE,
   }),
   selectors: {
@@ -14,13 +14,13 @@ export const dishSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder.addCase(getDishes.fulfilled, (state, { payload }) => {
-      entitiAdapter.setAll(state, payload);
+      entityAdapter.setAll(state, payload);
     }),
 });
 
 const selectDishSlice = (state) => state[dishSlice.name];
 
 export const { selectById: selectDishById } =
-  entitiAdapter.getSelectors(selectDishSlice);
+  entityAdapter.getSelectors(selectDishSlice);
 
 export const { selectRequestStatus } = dishSlice.selectors;
