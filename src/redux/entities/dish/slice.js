@@ -19,13 +19,13 @@ export const dishSlice = createSlice({
         entityAdapter.setMany(state, payload);
       })
       .addCase(getDish.fulfilled, (state, { payload }) => {
-        entityAdapter.setAll(state, payload);
+        entityAdapter.setOne(state, payload);
       }),
 });
 
 const selectDishSlice = (state) => state[dishSlice.name];
 
-export const { selectIds: selectDishesIds, selectById: selectDishById } =
+export const { selectById: selectDishById } =
   entityAdapter.getSelectors(selectDishSlice);
 
 export const { selectRequestStatus } = dishSlice.selectors;

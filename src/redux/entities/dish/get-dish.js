@@ -13,8 +13,8 @@ export const getDish = createAsyncThunk(
     if (!result) rejectWithValue("no data");
 
     return result;
+  },
+  {
+    condition: (dishId, { getState }) => !selectDishById(getState(), dishId),
   }
-  /*{
-    condition: (_, { getState }) => !selectDishById(getState()).length,
-  }*/
 );

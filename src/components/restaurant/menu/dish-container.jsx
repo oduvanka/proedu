@@ -12,7 +12,11 @@ export const DishContainer = ({ dishId }) => {
 
   const requestStatus = useRequest(getDish, dishId);
 
-  if (requestStatus === REQUEST_STATUS.PENDING) return <Loader />;
+  if (
+    (!Object.keys(dish).length && requestStatus === REQUEST_STATUS.IDLE) ||
+    requestStatus === REQUEST_STATUS.PENDING
+  )
+    return <Loader />;
 
   if (requestStatus === REQUEST_STATUS.ERROR) return <ErrorReject />;
 
