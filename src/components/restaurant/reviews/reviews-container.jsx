@@ -8,12 +8,12 @@ import { REQUEST_STATUS } from "../../app/const";
 import { Loader } from "../../loader/loader";
 import { ErrorReject } from "../../errors/error-reject";
 
-export const ReviewsContainer = ({ id }) => {
+export const ReviewsContainer = ({ restaurantId }) => {
   const restaurant = useSelector(
-    (state) => selectRestaurantById(state, id) || {}
+    (state) => selectRestaurantById(state, restaurantId) || {}
   );
 
-  const requestStatusRewiews = useRequest(getReviews, id);
+  const requestStatusRewiews = useRequest(getReviews, restaurantId);
   const requestStatusUsers = useRequest(getUsers);
 
   if (

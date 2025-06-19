@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { REQUEST_URL, SERVER } from "../../../components/app/const";
+import { selectDishById } from "./slice";
 
 export const getDish = createAsyncThunk(
   "dish/getDish",
@@ -9,8 +10,11 @@ export const getDish = createAsyncThunk(
 
     const result = await response.json();
 
-    if (!result.length) rejectWithValue("no data");
+    if (!result) rejectWithValue("no data");
 
     return result;
   }
+  /*{
+    condition: (_, { getState }) => !selectDishById(getState()).length,
+  }*/
 );

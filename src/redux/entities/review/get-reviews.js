@@ -12,7 +12,7 @@ export const getReviews = createAsyncThunk(
 
     const result = await response.json();
 
-    if (!result.length) rejectWithValue("no data");
+    if (!result?.length) rejectWithValue("no data");
 
     return result;
   }

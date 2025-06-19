@@ -19,11 +19,7 @@ export const Restaurants = () => {
 
   const requestStatus = useRequest(getRestaurants);
 
-  if (
-    requestStatus === REQUEST_STATUS.IDLE ||
-    requestStatus === REQUEST_STATUS.PENDING
-  )
-    return <Loader />;
+  if (requestStatus === REQUEST_STATUS.PENDING) return <Loader />;
   if (requestStatus === REQUEST_STATUS.ERROR) return <ErrorReject />;
   if (!restaurantIds.length) return <div>no restaurants available</div>;
 

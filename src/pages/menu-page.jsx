@@ -6,5 +6,5 @@ export const MenuPage = () => {
 
   if (!restaurantId) return null;
 
-  return <MenuContainer id={restaurantId} />;
+  return <MenuContainer restaurantId={restaurantId} />;
 };

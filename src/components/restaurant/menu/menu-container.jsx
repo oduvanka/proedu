@@ -7,11 +7,11 @@ import { Loader } from "../../loader/loader";
 import { ErrorReject } from "../../errors/error-reject";
 import { getDishes } from "../../../redux/entities/dish/get-dishes";
 
-export const MenuContainer = ({ id }) => {
+export const MenuContainer = ({ restaurantId }) => {
   const restaurant =
-    useSelector((state) => selectRestaurantById(state, id)) || {};
+    useSelector((state) => selectRestaurantById(state, restaurantId)) || {};
 
-  const requestStatus = useRequest(getDishes, id);
+  const requestStatus = useRequest(getDishes, restaurantId);
 
   if (
     requestStatus === REQUEST_STATUS.IDLE ||

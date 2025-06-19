@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { REQUEST_STATUS } from "../../../components/app/const.js";
-import { selectRestaurantsIds } from "../restaurant/slice.js";
 
 export const requestSlice = createSlice({
   name: "requestSlice",

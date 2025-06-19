@@ -16,7 +16,7 @@ export const dishSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(getDishes.fulfilled, (state, { payload }) => {
-        entityAdapter.setAll(state, payload);
+        entityAdapter.setMany(state, payload);
       })
       .addCase(getDish.fulfilled, (state, { payload }) => {
         entityAdapter.setAll(state, payload);
@@ -25,7 +25,7 @@ export const dishSlice = createSlice({
 
 const selectDishSlice = (state) => state[dishSlice.name];
 
-export const { selectById: selectDishById } =
+export const { selectIds: selectDishesIds, selectById: selectDishById } =
   entityAdapter.getSelectors(selectDishSlice);
 
 export const { selectRequestStatus } = dishSlice.selectors;

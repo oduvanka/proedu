@@ -10,11 +10,11 @@ export const getRestaurants = createAsyncThunk(
 
     const result = await response.json();
 
-    if (!result.length) rejectWithValue("no data");
+    if (!result?.length) rejectWithValue("no data");
 
     return result;
+  },
+  {
+    condition: (_, { getState }) => !selectRestaurantsIds(getState()).length,
   }
-  //{
-  //    condition: (_, { getState }) => !selectRestaurantsIds(getState()),
-  //  }
 );
