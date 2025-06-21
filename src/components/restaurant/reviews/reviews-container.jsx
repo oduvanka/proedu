@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../../redux/entities/restaurant/slice";
 import { Reviews } from "./reviews";
 import { useRequest } from "../../../redux/hooks/use-request";
-import { getReviews } from "../../../redux/entities/review/get-reviews";
+import { getReviewsByRestaurantId } from "../../../redux/entities/review/get-reviews-by-restaurantId";
 import { getUsers } from "../../../redux/entities/user/get-users";
 import { REQUEST_STATUS } from "../../app/const";
 import { Loader } from "../../loader/loader";
@@ -13,7 +13,10 @@ export const ReviewsContainer = ({ restaurantId }) => {
     (state) => selectRestaurantById(state, restaurantId) || {}
   );
 
-  const requestStatusRewiews = useRequest(getReviews, restaurantId);
+  const requestStatusRewiews = useRequest(
+    getReviewsByRestaurantId,
+    restaurantId
+  );
   const requestStatusUsers = useRequest(getUsers);
 
   if (
