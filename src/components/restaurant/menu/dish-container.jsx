@@ -7,22 +7,10 @@ import { REQUEST_STATUS } from "../../app/const";
 import { Loader } from "../../loader/loader";
 import { ErrorReject } from "../../errors/error-reject";
 
-export const DishContainer = ({ dishId }) => {
-  const dish = useSelector((state) => selectDishById(state, dishId)) || {};
-
-  const requestStatus = useRequest(getDishByDishId, dishId);
-
-  if (
-    (!Object.keys(dish).length && requestStatus === REQUEST_STATUS.IDLE) ||
-    requestStatus === REQUEST_STATUS.PENDING
-  )
-    return <Loader />;
-
-  if (requestStatus === REQUEST_STATUS.ERROR) return <ErrorReject />;
-
-  const { name, ingredients, price } = dish;
+export const DishContainer = ({ dish }) => {
+  const { id, name, ingredients, price } = dish;
 
   return (
-    <Dish dishId={dishId} name={name} ingredients={ingredients} price={price} />
+    <Dish dishId={id} name={name} ingredients={ingredients} price={price} />
   );
 };
