@@ -6,5 +6,5 @@ export const DishPage = () => {
 
   if (!dishId) return null;
 
-  return <DishContainer id={dishId} />;
+  return <DishContainer dishId={dishId} />;
 };

@@ -6,5 +6,5 @@ export const ReviewsPage = () => {
 
   if (!restaurantId) return null;
 
-  return <ReviewsContainer id={restaurantId} />;
+  return <ReviewsContainer restaurantId={restaurantId} />;
 };
