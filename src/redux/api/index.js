@@ -4,6 +4,7 @@ import { REQUEST_URL, SERVER } from "../../components/app/const";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: SERVER }),
+  tagTypes: ["Reviews"],
   endpoints: (builder) => ({
     getRestaurants: builder.query({
       query: () => REQUEST_URL.RESTAURANTS,
@@ -18,9 +19,18 @@ export const api = createApi({
     getReviewsByRestaurantId: builder.query({
       query: (restaurantId) =>
         `${REQUEST_URL.REVIEWS}?restaurantId=${restaurantId}`,
+      providesTags: [{ type: "Reviews", id: "all" }],
     }),
     getUsers: builder.query({
       query: () => REQUEST_URL.USERS,
+    }),
+    addReview: builder.mutation({
+      query: ({ restaurantId, review }) => ({
+        url: `${REQUEST_URL.REVIEW}/${restaurantId}`,
+        method: "POST",
+        body: review,
+      }),
+      invalidatesTags: [{ type: "Reviews", id: "all" }],
     }),
   }),
 });
@@ -31,4 +41,5 @@ export const {
   useGetDishByIdQuery,
   useGetReviewsByRestaurantIdQuery,
   useGetUsersQuery,
+  useAddReviewMutation,
 } = api;
