@@ -5,8 +5,7 @@ import { selectDishById } from "./slice";
 export const getDish = createAsyncThunk(
   "dish/getDish",
   async (dishId, rejectWithValue, dispatch, getState) => {
-    const api = REQUEST_URL.DISH;
-    const response = await fetch(`${SERVER}${api}/${dishId}`);
+    const response = await fetch(`${SERVER}${REQUEST_URL.DISH}/${dishId}`);
 
     const result = await response.json();
 

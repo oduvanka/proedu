@@ -5,8 +5,7 @@ import { selectUsersIds } from "./slice";
 export const getUsers = createAsyncThunk(
   "users/getUsers",
   async (_, rejectWithValue, dispatch, getState) => {
-    const api = REQUEST_URL.USERS;
-    const response = await fetch(`${SERVER}${api}`);
+    const response = await fetch(`${SERVER}${REQUEST_URL.USERS}`);
 
     const result = await response.json();
 

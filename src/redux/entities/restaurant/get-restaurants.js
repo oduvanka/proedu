@@ -5,8 +5,7 @@ import { selectRestaurantsIds } from "./slice";
 export const getRestaurants = createAsyncThunk(
   "restaurants/getRestaurants",
   async (_, rejectWithValue, dispatch, getState) => {
-    const api = REQUEST_URL.RESTAURANTS;
-    const response = await fetch(`${SERVER}${api}`);
+    const response = await fetch(`${SERVER}${REQUEST_URL.RESTAURANTS}`);
 
     const result = await response.json();
 
