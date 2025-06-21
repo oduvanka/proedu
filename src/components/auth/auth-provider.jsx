@@ -8,7 +8,11 @@ export const AuthProvider = ({ children }) => {
     setAuth((currentAuth) => {
       return currentAuth.isAuthorized
         ? INIT_AUTH
-        : { id: 1, name: "Julia", isAuthorized: true };
+        : {
+            id: "c3d4abd4-c3ef-46e1-8719-eb17db1d6e99",
+            name: "Lolly",
+            isAuthorized: true,
+          };
     });
   };
 

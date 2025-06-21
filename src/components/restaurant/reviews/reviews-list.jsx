@@ -7,9 +7,9 @@ export const ReviewsList = ({ reviews }) => {
 
   return (
     <ul className={styles.reviews}>
-      {reviews.map((reviewId) => (
-        <li key={reviewId}>
-          <ReviewContainer reviewId={reviewId} />
+      {reviews.map((review) => (
+        <li key={review.id}>
+          <ReviewContainer review={review} />
         </li>
       ))}
     </ul>
