@@ -14,7 +14,7 @@ export const ReviewForm = ({ isFeedbackSubmission, onSubmitForm }) => {
 
   useEffect(() => {
     onChangeName({ target: { value: auth.name } });
-  }, []);
+  }, [auth.name]);
 
   const { name, text, rating } = form;
 
