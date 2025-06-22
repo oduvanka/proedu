@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { REQUEST_URL, SERVER } from "../../../components/app/const";
 
-export const getReviews = createAsyncThunk(
-  "reviews/getReviews",
+export const getDishesByRestaurantId = createAsyncThunk(
+  "dishes/getDishesByRestaurantId",
   async (restaurantId, rejectWithValue, dispatch, getState) => {
     const response = await fetch(
-      `${SERVER}${REQUEST_URL.REVIEWS}?restaurantId=${restaurantId}`
+      `${SERVER}${REQUEST_URL.DISHES}?restaurantId=${restaurantId}`
     );
 
     const result = await response.json();

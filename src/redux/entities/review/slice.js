@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import { getReviews } from "./get-reviews";
+import { getReviewsByRestaurantId } from "./get-reviews-by-restaurantId";
 import { REQUEST_STATUS } from "../../../components/app/const";
 
 const entityAdapter = createEntityAdapter();
@@ -13,9 +13,12 @@ export const reviewSlice = createSlice({
     selectRequestStatus: (state) => state.requestStatus,
   },
   extraReducers: (builder) =>
-    builder.addCase(getReviews.fulfilled, (state, { payload }) => {
-      entityAdapter.setAll(state, payload);
-    }),
+    builder.addCase(
+      getReviewsByRestaurantId.fulfilled,
+      (state, { payload }) => {
+        entityAdapter.setAll(state, payload);
+      }
+    ),
 });
 
 const selectReviewSlice = (state) => state[reviewSlice.name];

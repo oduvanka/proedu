@@ -1,14 +1,15 @@
-import { useSelector } from "react-redux";
-import { selectReviewById } from "../../../redux/entities/review/slice";
-import { selectUserById } from "../../../redux/entities/user/slice";
+import { useGetUsersQuery } from "../../../redux/api";
 import { Review } from "./rewiew";
 
-export const ReviewContainer = ({ reviewId }) => {
-  const review =
-    useSelector((state) => selectReviewById(state, reviewId)) || {};
+export const ReviewContainer = ({ review }) => {
   const { userId, text, rating } = review;
 
-  const user = useSelector((state) => selectUserById(state, userId)) || {};
+  const { data: user } = useGetUsersQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result.data.find(({ id }) => id === userId),
+    }),
+  });
   const { name } = user;
 
   return <Review name={name} text={text} rating={rating} />;
