@@ -1,8 +1,10 @@
-import { useParams } from "react-router";
-import { Dish } from "../components/restaurant/menu/dish";
-import { useGetDishByIdQuery } from "../redux/api";
-import { Loader } from "../components/loader/loader";
-import { ErrorReject } from "../components/errors/error-reject";
+"use client";
+
+import { useParams } from "next/navigation";
+import { Dish } from "../restaurant/menu/dish";
+import { useGetDishByIdQuery } from "../../redux/api";
+import { Loader } from "../loader/loader";
+import { ErrorReject } from "../errors/error-reject";
 
 export const DishPage = () => {
   const { dishId } = useParams();
@@ -19,3 +21,5 @@ export const DishPage = () => {
     <Dish dishId={id} name={name} ingredients={ingredients} price={price} />
   );
 };
+
+export default DishPage;

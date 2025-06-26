@@ -1,6 +1,8 @@
-import { useParams } from "react-router";
-import { RestaurantContainer } from "../components/restaurant/restaurant-container";
-import { useGetRestaurantsQuery } from "../redux/api";
+"use client";
+
+import { useParams } from "next/navigation";
+import { RestaurantContainer } from "../restaurant/restaurant-container";
+import { useGetRestaurantsQuery } from "../../redux/api";
 
 export const RestaurantPage = () => {
   const { restaurantId } = useParams();
@@ -16,3 +18,5 @@ export const RestaurantPage = () => {
 
   return <RestaurantContainer restaurant={restaurant} />;
 };
+
+export default RestaurantPage;
