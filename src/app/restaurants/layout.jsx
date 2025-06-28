@@ -1,7 +1,9 @@
+import Restaurants from "../../components/restaurants/restaurants";
+
 const RestaurantsLayout = ({ children }) => {
   return (
     <div>
-      <div>{children}</div>
+      <Restaurants>{children}</Restaurants>
     </div>
   );
 };

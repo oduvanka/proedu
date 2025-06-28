@@ -12,8 +12,8 @@ export const Restaurant = ({ name, children }) => {
       <h2 className={styles.restaurantHeader}>{name}</h2>
 
       <Tabs>
-        <TabLink url={`${restaurantId}/menu`} text="Menu" />
-        <TabLink url={`${restaurantId}/reviews`} text="Reviews" />
+        <TabLink url={`/restaurants/${restaurantId}/menu`} text="Menu" />
+        <TabLink url={`/restaurants/${restaurantId}/reviews`} text="Reviews" />
       </Tabs>
 
       {children}

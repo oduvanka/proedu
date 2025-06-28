@@ -7,7 +7,7 @@ import { AuthContext } from "../auth/auth-context";
 import { AuthButton } from "../auth/auth-button";
 
 export const HomePage = () => {
-  let router = useRouter();
+  const router = useRouter();
 
   const { auth } = useContext(AuthContext);
 

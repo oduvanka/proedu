@@ -1,10 +1,10 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { RestaurantContainer } from "../restaurant/restaurant-container";
 import { useGetRestaurantsQuery } from "../../redux/api";
+import { Restaurant } from "../restaurant/restaurant";
 
-export const RestaurantPage = () => {
+export const RestaurantPage = ({ children }) => {
   const { restaurantId } = useParams();
 
   const { data: restaurant } = useGetRestaurantsQuery(undefined, {
@@ -16,7 +16,9 @@ export const RestaurantPage = () => {
 
   if (!restaurant) return null;
 
-  return <RestaurantContainer restaurant={restaurant} />;
+  const { name } = restaurant;
+
+  return <Restaurant name={name}>{children}</Restaurant>;
 };
 
 export default RestaurantPage;

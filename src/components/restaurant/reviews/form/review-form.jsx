@@ -45,6 +45,7 @@ export const ReviewForm = ({ isFeedbackSubmission, onSubmitForm }) => {
           required
           value={text}
           onChange={onChangeText}
+          className={styles.reviewText}
         />
       </div>
       <div className={styles.formGroup}>
