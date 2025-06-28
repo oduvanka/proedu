@@ -1,5 +1,8 @@
+"use client";
+
 import { useContext } from "react";
-import { Link, useLocation } from "react-router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./menu.module.css";
 import { Counter } from "../../counter/counter";
 import { useCounter } from "../../counter/useCounter";
@@ -11,7 +14,7 @@ import { CURRENCY } from "../../app/const";
 export const Dish = ({ dishId, name, ingredients, price }) => {
   const { auth } = useContext(AuthContext);
 
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const { count, onDecrement, onIncrement } = useCounter(dishId, price);
 
@@ -22,7 +25,7 @@ export const Dish = ({ dishId, name, ingredients, price }) => {
           {pathname === `/dish/${dishId}` ? (
             name
           ) : (
-            <Link to={`/dish/${dishId}`}>{name}</Link>
+            <Link href={`/dish/${dishId}`}>{name}</Link>
           )}
         </h4>
 

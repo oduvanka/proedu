@@ -1,7 +1,3 @@
-textarea {
-  resize: vertical;
-}
-
 .form {
   padding: 16px;
   background-color: #00000009;
@@ -21,6 +17,10 @@ textarea {
 .formGroup input,
 .formGroup textarea {
   flex: 1;
+}
+
+.reviewText {
+  resize: vertical;
 }
 
 .buttonToolbar {
