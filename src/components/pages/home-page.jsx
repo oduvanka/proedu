@@ -1,17 +1,19 @@
+"use client";
+
 import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 import styles from "./padges.module.css";
-import { AuthButton } from "../components/auth/auth-button";
-import { AuthContext } from "../components/auth/auth-context";
+import { AuthContext } from "../auth/auth-context";
+import { AuthButton } from "../auth/auth-button";
 
 export const HomePage = () => {
-  let navigate = useNavigate();
+  const router = useRouter();
 
   const { auth } = useContext(AuthContext);
 
   useEffect(() => {
-    if (auth.isAuthorized) navigate("restaurants", { replace: true });
-  }, [auth.isAuthorized, navigate]);
+    if (auth.isAuthorized) router.push("restaurants");
+  }, [auth.isAuthorized, router]);
 
   return (
     <div className={styles.homePage}>
@@ -22,3 +24,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

@@ -1,14 +1,16 @@
-import { useParams } from "react-router";
+"use client";
+
+import { useContext } from "react";
+import { useParams } from "next/navigation";
 import {
   useAddReviewMutation,
   useGetReviewsByRestaurantIdQuery,
   useGetUsersQuery,
-} from "../redux/api";
-import { Reviews } from "../components/restaurant/reviews/reviews";
-import { Loader } from "../components/loader/loader";
-import { ErrorReject } from "../components/errors/error-reject";
-import { useContext } from "react";
-import { AuthContext } from "../components/auth/auth-context";
+} from "../../redux/api";
+import { Reviews } from "../restaurant/reviews/reviews";
+import { Loader } from "../loader/loader";
+import { ErrorReject } from "../errors/error-reject";
+import { AuthContext } from "../auth/auth-context";
 
 export const ReviewsPage = () => {
   const { auth } = useContext(AuthContext);
@@ -43,3 +45,5 @@ export const ReviewsPage = () => {
     />
   );
 };
+
+export default ReviewsPage;
