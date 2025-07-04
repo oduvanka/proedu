@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import { Loader } from "../../../components/loader/loader";
+import Loading from "../../../components/loader/loading";
 
 const DishLayout = ({ children }) => {
-  return <Suspense fallback={<Loader />}>{children}</Suspense>;
+  return <Suspense fallback={<Loading />}>{children}</Suspense>;
 };
 
 export default DishLayout;
