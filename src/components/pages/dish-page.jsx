@@ -1,19 +1,13 @@
-"use client";
-
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import { Dish } from "../restaurant/menu/dish";
-import { useGetDishByIdQuery } from "../../redux/api";
-import { Loader } from "../loader/loader";
-import { ErrorReject } from "../errors/error-reject";
+import { getDishById } from "../../services/get-dish-by-id";
 
-export const DishPage = () => {
-  const { dishId } = useParams();
+export const DishPage = async ({ params }) => {
+  const { dishId } = await params;
 
-  const { data: dish, isLoading, isError } = useGetDishByIdQuery(dishId);
+  const { data: dish } = await getDishById(dishId);
 
-  if (isLoading) return <Loader />;
-
-  if (isError) return <ErrorReject />;
+  if (!dish) return notFound();
 
   const { id, name, ingredients, price } = dish;
 

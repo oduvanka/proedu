@@ -1,3 +1,5 @@
+"use client";
+
 import { Counter } from "../../../counter/counter";
 import { MAX_RATING, MIN_RATING, STEP_RATING } from "./const";
 import { useFormReview } from "./use-form-review";

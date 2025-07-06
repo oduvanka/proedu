@@ -1,22 +1,15 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { useGetDishesByRestaurantIdQuery } from "../../redux/api";
 import { Menu } from "../restaurant/menu/menu";
-import { Loader } from "../loader/loader";
-import { ErrorReject } from "../errors/error-reject";
+import { getDishesByRestaurantId } from "../../services/get-dishes-by-restaurantId";
+import { notFound } from "next/navigation";
 
-export const MenuPage = () => {
-  const { restaurantId } = useParams();
+export const MenuPage = async ({ params }) => {
+  const { restaurantId } = await params;
 
-  const { data, isLoading, isError } =
-    useGetDishesByRestaurantIdQuery(restaurantId);
+  const { data: menu } = await getDishesByRestaurantId(restaurantId);
 
-  if (isLoading) return <Loader />;
+  if (!menu) return notFound();
 
-  if (isError) return <ErrorReject />;
-
-  return <Menu menu={data} />;
+  return <Menu menu={menu} />;
 };
 
 export default MenuPage;

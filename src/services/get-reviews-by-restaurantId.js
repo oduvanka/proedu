@@ -1,9 +1,9 @@
 import { REQUEST_URL, SERVER } from "../components/app/const";
 
-export const getRestaurants = async () => {
-  const responce = await fetch(`${SERVER}${REQUEST_URL.RESTAURANTS}`, {
-    cache: "no-store",
-  });
+export const getReviewsByRestaurantId = async (restaurantId) => {
+  const responce = await fetch(
+    `${SERVER}${REQUEST_URL.REVIEWS}?restaurantId=${restaurantId}`
+  );
 
   if (!responce.ok) {
     return { error: responce.status, data: null };

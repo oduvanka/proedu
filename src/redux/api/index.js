@@ -6,24 +6,6 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: SERVER }),
   tagTypes: ["Reviews"],
   endpoints: (builder) => ({
-    getRestaurants: builder.query({
-      query: () => REQUEST_URL.RESTAURANTS,
-    }),
-    getDishesByRestaurantId: builder.query({
-      query: (restaurantId) =>
-        `${REQUEST_URL.DISHES}?restaurantId=${restaurantId}`,
-    }),
-    getDishById: builder.query({
-      query: (dishId) => `${REQUEST_URL.DISH}/${dishId}`,
-    }),
-    getReviewsByRestaurantId: builder.query({
-      query: (restaurantId) =>
-        `${REQUEST_URL.REVIEWS}?restaurantId=${restaurantId}`,
-      providesTags: [{ type: "Reviews", id: "all" }],
-    }),
-    getUsers: builder.query({
-      query: () => REQUEST_URL.USERS,
-    }),
     addReview: builder.mutation({
       query: ({ restaurantId, review }) => ({
         url: `${REQUEST_URL.REVIEW}/${restaurantId}`,
@@ -35,11 +17,4 @@ export const api = createApi({
   }),
 });
 
-export const {
-  useGetRestaurantsQuery,
-  useGetDishesByRestaurantIdQuery,
-  useGetDishByIdQuery,
-  useGetReviewsByRestaurantIdQuery,
-  useGetUsersQuery,
-  useAddReviewMutation,
-} = api;
+export const { useAddReviewMutation } = api;

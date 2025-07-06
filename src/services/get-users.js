@@ -1,7 +1,7 @@
 import { REQUEST_URL, SERVER } from "../components/app/const";
 
-export const getRestaurants = async () => {
-  const responce = await fetch(`${SERVER}${REQUEST_URL.RESTAURANTS}`, {
+export const getUsers = async () => {
+  const responce = await fetch(`${SERVER}${REQUEST_URL.USERS}`, {
     cache: "no-store",
   });
 
