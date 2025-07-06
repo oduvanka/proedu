@@ -1,18 +1,14 @@
-"use client";
-
 import styles from "./restaurants.module.css";
 import { Tabs } from "../tabs/tabs";
 import { TabLink } from "../tabs/tab";
-import { Loader } from "../loader/loader";
-import { ErrorReject } from "../errors/error-reject";
-import { useGetRestaurantsQuery } from "../../redux/api";
+import { getRestaurants } from "../../services/get-restaurants";
+import { notFound } from "next/navigation";
 
-export const Restaurants = ({ children }) => {
-  const { data, isLoading, isError } = useGetRestaurantsQuery();
+export const Restaurants = async ({ children }) => {
+  const { error, data } = await getRestaurants();
 
-  if (isLoading) return <Loader />;
-  if (isError) return <ErrorReject />;
-  if (!data.length) return <div>no restaurants available</div>;
+  if (error) throw new Error(error);
+  if (!data) notFound();
 
   return (
     <main className={styles.content}>

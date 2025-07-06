@@ -1,20 +1,17 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { useGetRestaurantsQuery } from "../../redux/api";
+import { notFound, useParams } from "next/navigation";
 import { Restaurant } from "../restaurant/restaurant";
+import { getRestaurants } from "../../services/get-restaurants";
 
-export const RestaurantPage = ({ children }) => {
+export const RestaurantPage = async ({ children }) => {
   const { restaurantId } = useParams();
 
-  const { data: restaurant } = useGetRestaurantsQuery(undefined, {
-    selectFromResult: (result) => ({
-      ...result,
-      data: result.data.find(({ id }) => id === restaurantId),
-    }),
-  });
+  const { data: restaurants } = await getRestaurants();
 
-  if (!restaurant) return null;
+  const restaurant = restaurants.find(({ id }) => id === restaurantId);
+
+  if (!restaurant) return notFound();
 
   const { name } = restaurant;
 
