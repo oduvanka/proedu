@@ -1,11 +1,9 @@
-"use client";
-
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import { Restaurant } from "../restaurant/restaurant";
 import { getRestaurants } from "../../services/get-restaurants";
 
-export const RestaurantPage = async ({ children }) => {
-  const { restaurantId } = useParams();
+export const RestaurantPage = async ({ params, children }) => {
+  const { restaurantId } = await params;
 
   const { data: restaurants } = await getRestaurants();
 

@@ -1,4 +1,5 @@
 import RestaurantPage from "../../../components/pages/restaurant-page";
+import { getRestaurantById } from "../../../services/get-restaurant-by-id";
 
 export const generateStaticParams = () => {
   return [
@@ -7,12 +8,15 @@ export const generateStaticParams = () => {
   ];
 };
 
-const RestaurantLayout = ({ children }) => {
-  return (
-    <div>
-      <RestaurantPage>{children}</RestaurantPage>
-    </div>
-  );
+export const generateMetadata = async ({ params }) => {
+  const { restaurantId } = await params;
+
+  const { data } = await getRestaurantById(restaurantId);
+
+  if (data)
+    return {
+      title: data.name,
+    };
 };
 
-export default RestaurantLayout;
+export default RestaurantPage;

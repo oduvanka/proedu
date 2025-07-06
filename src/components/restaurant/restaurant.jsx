@@ -1,3 +1,4 @@
+"use client";
 // Карточка ресторана
 import { useParams } from "next/navigation";
 import styles from "./restaurant.module.css";

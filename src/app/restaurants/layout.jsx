@@ -1,11 +1,5 @@
 import Restaurants from "../../components/restaurants/restaurants";
 
-const RestaurantsLayout = ({ children }) => {
-  return (
-    <div>
-      <Restaurants>{children}</Restaurants>
-    </div>
-  );
-};
+export const dynamic = "force-dynamic";
 
-export default RestaurantsLayout;
+export default Restaurants;

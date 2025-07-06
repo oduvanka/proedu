@@ -1,12 +1,9 @@
 import { REQUEST_URL, SERVER } from "../components/app/const";
 
-export const getRestaurants = async () => {
-  const responce = await fetch(`${SERVER}${REQUEST_URL.RESTAURANTS}`, {
-    next: {
-      revalidate: 10,
-      tags: ["getRestaurants"],
-    },
-  });
+export const getRestaurantById = async (restaurantId) => {
+  const responce = await fetch(
+    `${SERVER}${REQUEST_URL.RESTAURANT}/${restaurantId}`
+  );
 
   if (!responce.ok) {
     return { error: responce.status, data: null };
