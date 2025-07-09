@@ -6,7 +6,7 @@ import { getReviewsByRestaurantId } from "../../services/get-reviews-by-restaura
 import { getUsers } from "../../services/get-users";
 import { UsersProvider } from "../users/users-provider";
 
-export const ReviewsPage = async ({ params }) => {
+const ReviewsPage = async ({ params }) => {
   //const { auth } = useContext(AuthContext);
 
   const { restaurantId } = await params;

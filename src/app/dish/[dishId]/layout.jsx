@@ -1,4 +1,3 @@
-import { DishPage } from "../../../components/pages/dish-page";
 import { getDishById } from "../../../services/get-dish-by-id";
 
 export const generateMetadata = async ({ params }) => {
@@ -12,4 +11,8 @@ export const generateMetadata = async ({ params }) => {
     };
 };
 
-export default DishPage;
+const DishLayout = ({ children }) => {
+  return <div>{children}</div>;
+};
+
+export default DishLayout;

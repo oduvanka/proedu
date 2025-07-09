@@ -2,7 +2,7 @@ import { Menu } from "../restaurant/menu/menu";
 import { getDishesByRestaurantId } from "../../services/get-dishes-by-restaurantId";
 import { notFound } from "next/navigation";
 
-export const MenuPage = async ({ params }) => {
+const MenuPage = async ({ params }) => {
   const { restaurantId } = await params;
 
   const { data: menu } = await getDishesByRestaurantId(restaurantId);
