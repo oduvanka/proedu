@@ -1,14 +1,9 @@
-//import { useContext } from "react";
-//import { useAddReviewMutation } from "../../redux/api";
-import { Reviews } from "../restaurant/reviews/reviews";
-//import { AuthContext } from "../auth/auth-context";
+import ReviewsContainer from "../restaurant/reviews/reviews-container";
 import { getReviewsByRestaurantId } from "../../services/get-reviews-by-restaurantId";
 import { getUsers } from "../../services/get-users";
 import { UsersProvider } from "../users/users-provider";
 
 const ReviewsPage = async ({ params }) => {
-  //const { auth } = useContext(AuthContext);
-
   const { restaurantId } = await params;
 
   const [{ data: reviews }, { data: users }] = await Promise.all([
@@ -20,28 +15,9 @@ const ReviewsPage = async ({ params }) => {
 
   return (
     <UsersProvider users={users}>
-      <Reviews
-        reviews={reviews}
-        //isFeedbackSubmission={isLoading}
-        //onAddReview={handleAddReview}
-      />
+      <ReviewsContainer restaurantId={restaurantId} reviews={reviews} />
     </UsersProvider>
   );
-
-  /*const {
-    data: reviews,
-    isLoading: isLoadingReviews,
-    isError: isErrorReviews,
-  } = useGetReviewsByRestaurantIdQuery(restaurantId);
-
-  const [addReviewMutation, { isLoading, isError }] = useAddReviewMutation();
-
-  const handleAddReview = (review) =>
-    addReviewMutation({
-      restaurantId: restaurantId,
-      review: { ...review, userId: auth.id },
-    });
-;*/
 };
 
 export default ReviewsPage;

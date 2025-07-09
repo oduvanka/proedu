@@ -30,3 +30,7 @@
 .buttonToolbar button {
   margin-right: 16px;
 }
+
+.errors {
+  color: red;
+}

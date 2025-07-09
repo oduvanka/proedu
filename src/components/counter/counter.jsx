@@ -9,6 +9,7 @@ export const Counter = ({
   disabledButtons,
   onDecrement,
   onIncrement,
+  ...props
 }) => {
   return (
     <div>
@@ -20,7 +21,13 @@ export const Counter = ({
       >
         -
       </Button>
-      <span className={styles.count}>{count}</span>
+      <input
+        size={1}
+        readOnly
+        value={count}
+        className={styles.count}
+        {...props}
+      />
       <Button
         type="button"
         isSmall

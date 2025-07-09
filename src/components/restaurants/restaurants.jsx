@@ -5,7 +5,6 @@ import { getRestaurants } from "../../services/get-restaurants";
 import { notFound } from "next/navigation";
 
 const Restaurants = async ({ children }) => {
-  console.log("Restaurants");
   const { error, data } = await getRestaurants();
 
   if (error) throw new Error(error);
