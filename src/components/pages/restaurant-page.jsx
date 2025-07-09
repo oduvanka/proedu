@@ -13,7 +13,11 @@ const RestaurantPage = async ({ params, children }) => {
 
   const { name } = restaurant;
 
-  return <Restaurant name={name}>{children}</Restaurant>;
+  return (
+    <Restaurant restaurantId={restaurantId} name={name}>
+      {children}
+    </Restaurant>
+  );
 };
 
 export default RestaurantPage;
