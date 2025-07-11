@@ -1,3 +1,3 @@
-import ReviewsPage from "../../../../components/pages/reviews-page";
+import ReviewsPage from "@/components/pages/reviews-page";
 
 export default ReviewsPage;

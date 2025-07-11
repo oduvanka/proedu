@@ -1,5 +1,5 @@
-import RestaurantPage from "../../../components/pages/restaurant-page";
-import { getRestaurantById } from "../../../services/get-restaurant-by-id";
+import RestaurantPage from "@/components/pages/restaurant-page";
+import { getRestaurantById } from "@/services/get-restaurant-by-id";
 
 export const generateStaticParams = () => {
   return [

@@ -5,7 +5,7 @@ import {
 } from "../../redux/entities/cart/slice";
 import styles from "./cart.module.css";
 import { DishInCart } from "./dish-in-cart";
-import { CURRENCY } from "../app/const";
+import { CURRENCY } from "@/globalconst";
 
 export const Cart = () => {
   const items = useSelector(selectCartItems);

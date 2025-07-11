@@ -3,8 +3,8 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./padges.module.css";
-import { AuthContext } from "../auth/auth-context";
-import { AuthButton } from "../auth/auth-button";
+import { AuthContext } from "@/auth/auth-context";
+import { AuthButton } from "@/auth/auth-button";
 
 const HomePage = () => {
   const router = useRouter();

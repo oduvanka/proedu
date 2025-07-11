@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MAX_RATING, MIN_RATING, STEP_RATING } from "./const";
 import { Counter } from "../../../counter/counter";
 

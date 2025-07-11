@@ -1,7 +1,7 @@
 // Карточка отзыва
 import classNames from "classnames";
 import styles from "./reviews.module.css";
-import { HelpText } from "../../helpText/help-text";
+import { HelpText } from "@/helptext";
 
 export const Review = ({ name, text, rating }) => {
   const isGood = rating >= 4;

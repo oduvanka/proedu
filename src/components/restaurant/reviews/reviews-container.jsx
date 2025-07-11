@@ -6,7 +6,7 @@ import { Reviews } from "../reviews/reviews";
 
 import { addReviewAction } from "../../../actions/add-review-action";
 import { MAX_RATING } from "./form/const";
-import { AuthContext } from "../../auth/auth-context";
+import { AuthContext } from "@/auth/auth-context";
 
 const ReviewsContainer = ({ restaurantId, reviews }) => {
   const { auth } = useContext(AuthContext);

@@ -1,4 +1,4 @@
-import { Button } from "../button/button";
+import { Button } from "@/button/button";
 import styles from "./counter.module.css";
 import { checkIsMax, checkIsMin } from "./utils";
 

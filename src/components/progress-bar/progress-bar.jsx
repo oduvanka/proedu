@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import classNames from "classnames";
-import { THEMES, ThemeContext } from "../theme/theme-context";
+import { THEMES, ThemeContext } from "@/theme/theme-context";
 import styles from "./progress.module.css";
 import { useProgressBar } from "./useProgressBar";
 

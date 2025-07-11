@@ -1,5 +1,5 @@
 import { Menu } from "../restaurant/menu/menu";
-import { getDishesByRestaurantId } from "../../services/get-dishes-by-restaurantId";
+import { getDishesByRestaurantId } from "@/services/get-dishes-by-restaurantId";
 import { notFound } from "next/navigation";
 
 const MenuPage = async ({ params }) => {

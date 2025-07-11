@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Dish } from "../restaurant/menu/dish";
-import { getDishById } from "../../services/get-dish-by-id";
+import { getDishById } from "@/services/get-dish-by-id";
 
 const DishPage = async ({ params }) => {
   const { dishId } = await params;

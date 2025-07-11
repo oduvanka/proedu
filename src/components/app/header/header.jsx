@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import Link from "next/link";
 import styles from "./header.module.css";
-import { Button } from "../../button/button";
-import { ThemeContext } from "../../theme/theme-context";
-import { HelpText } from "../../helpText/help-text";
-import { AuthButton } from "../../auth/auth-button";
+import { Button } from "@/button/button";
+import { ThemeContext } from "@/theme/theme-context";
+import { HelpText } from "@/helptext";
+import { AuthButton } from "@/auth/auth-button";
 
 export const Header = () => {
   const { toggleTheme } = useContext(ThemeContext);

@@ -4,8 +4,8 @@ import { useActionState, useContext } from "react";
 import { useFormStatus } from "react-dom";
 import { MAX_RATING } from "./const";
 import styles from "./form.module.css";
-import { Button } from "../../../button/button";
-import { AuthContext } from "../../../auth/auth-context";
+import { Button } from "@/button/button";
+import { AuthContext } from "@/auth/auth-context";
 import { Rating } from "./rating";
 
 export const ReviewForm = ({ submitFormAction }) => {

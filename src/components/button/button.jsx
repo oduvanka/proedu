@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import classNames from "classnames";
 import styles from "./button.module.css";
-import { THEMES, ThemeContext } from "../theme/theme-context";
+import { THEMES, ThemeContext } from "@/theme/theme-context";
 
 export const Button = ({ isSmall, children, ...props }) => {
   const { theme } = useContext(ThemeContext);

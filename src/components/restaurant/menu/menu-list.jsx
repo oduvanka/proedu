@@ -1,6 +1,6 @@
 import styles from "./menu.module.css";
 import { MAX_COUNT } from "./const";
-import { HelpText } from "../../helpText/help-text";
+import { HelpText } from "@/helptext";
 import { Dish } from "../menu/dish";
 
 export const MenuList = ({ menu }) => {

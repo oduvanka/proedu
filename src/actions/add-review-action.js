@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { REQUEST_URL, SERVER } from "../components/app/const";
+import { REQUEST_URL, SERVER } from "@/globalconst";
 
 export async function addReviewAction({ restaurantId, review, pathname }) {
   const result = await fetch(`${SERVER}${REQUEST_URL.REVIEW}/${restaurantId}`, {

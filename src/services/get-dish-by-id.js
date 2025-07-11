@@ -1,4 +1,4 @@
-import { REQUEST_URL, SERVER } from "../components/app/const";
+import { REQUEST_URL, SERVER } from "@/globalconst";
 
 export const getDishById = async (dishId) => {
   const responce = await fetch(`${SERVER}${REQUEST_URL.DISH}/${dishId}`);

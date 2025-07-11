@@ -1,6 +1,6 @@
 import ReviewsContainer from "../restaurant/reviews/reviews-container";
-import { getReviewsByRestaurantId } from "../../services/get-reviews-by-restaurantId";
-import { getUsers } from "../../services/get-users";
+import { getReviewsByRestaurantId } from "@/services/get-reviews-by-restaurantId";
+import { getUsers } from "@/services/get-users";
 import { UsersProvider } from "../users/users-provider";
 
 const ReviewsPage = async ({ params }) => {

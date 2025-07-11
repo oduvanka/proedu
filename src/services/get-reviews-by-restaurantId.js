@@ -1,4 +1,4 @@
-import { REQUEST_URL, SERVER } from "../components/app/const";
+import { REQUEST_URL, SERVER } from "@/globalconst";
 
 export const getReviewsByRestaurantId = async (restaurantId) => {
   const responce = await fetch(

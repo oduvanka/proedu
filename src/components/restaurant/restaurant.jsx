@@ -1,7 +1,7 @@
 // Карточка ресторана
 import styles from "./restaurant.module.css";
-import { Tabs } from "../tabs/tabs";
-import { TabLink } from "../tabs/tab";
+import { Tabs } from "@/tabs/tabs";
+import { TabLink } from "@/tabs/tab";
 
 export const Restaurant = ({ restaurantId, name, children }) => {
   return (

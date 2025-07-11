@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./cart.module.css";
-import { HelpText } from "../helpText/help-text";
-import { CURRENCY } from "../app/const";
+import { HelpText } from "@/helptext";
+import { CURRENCY } from "@/globalconst";
 
 export const DishInCart = ({ id, amount }) => {
   const dish = {};
