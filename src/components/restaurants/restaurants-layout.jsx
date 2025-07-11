@@ -4,7 +4,7 @@ import { TabLink } from "../tabs/tab";
 import { getRestaurants } from "../../services/get-restaurants";
 import { notFound } from "next/navigation";
 
-const Restaurants = async ({ children }) => {
+const RestaurantsLayout = async ({ children }) => {
   const { error, data } = await getRestaurants();
 
   if (error) throw new Error(error);
