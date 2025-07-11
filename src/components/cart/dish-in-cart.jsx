@@ -3,11 +3,7 @@ import styles from "./cart.module.css";
 import { HelpText } from "@/helptext";
 import { CURRENCY } from "@/globalconst";
 
-export const DishInCart = ({ id, amount }) => {
-  const dish = {};
-
-  const { name, price } = dish;
-
+export const DishInCart = ({ id, name, amount, price }) => {
   return (
     <>
       <span>

@@ -16,7 +16,7 @@ export const Dish = ({ dishId, name, ingredients, price }) => {
 
   const pathname = usePathname();
 
-  const { count, onDecrement, onIncrement } = useCounter(dishId, price);
+  const { count, onDecrement, onIncrement } = useCounter(dishId, name, price);
 
   return (
     <div className={styles.card}>
