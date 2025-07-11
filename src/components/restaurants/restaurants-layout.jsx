@@ -1,8 +1,8 @@
+import { notFound } from "next/navigation";
 import styles from "./restaurants.module.css";
 import { Tabs } from "../tabs/tabs";
 import { TabLink } from "../tabs/tab";
 import { getRestaurants } from "../../services/get-restaurants";
-import { notFound } from "next/navigation";
 
 const RestaurantsLayout = async ({ children }) => {
   const { error, data } = await getRestaurants();
@@ -22,4 +22,4 @@ const RestaurantsLayout = async ({ children }) => {
   );
 };
 
-export default Restaurants;
+export default RestaurantsLayout;
