@@ -1,7 +1,15 @@
-Учебный проект на курсе https://learn.javascript.ru/courses/react
-Ссылка на репозиторий преподавателя: https://github.com/zubkov7/react-20250512/tree/main
+<p>
+  Учебный проект на курсе React:
+  <br/>
+  https://learn.javascript.ru/courses/react
+</p>
+<p>
+  Ссылка на репозиторий преподавателя (в readme описание домашних заданий):
+  <br/>
+  https://github.com/zubkov7/react-20250512/tree/main
+</p>
 
-Состав:
+Страницы на проекте:
 1) Страница логина (имитация)
 2) Список ресторанов
 3) Карточка ресторана
@@ -11,21 +19,30 @@
 7) Форма для создания своего отзыва
 8) Корзина
 
-На момент hw-6
-Проект реализован на React (js) с помощью хуков и редьюсера (для формы отзыва), сборка Vite
+<p>Домашних заданий всего 12. Каждая домашка выполнена в отдельной ветке.</p>
+
+<h2>hw-6</h2>
+Проект реализован на React.js с помощью хуков и редьюсера (для формы отзыва), сборка Vite
+<br/>
 Для запуска npm run dev / npm run build (localhost:5173)
 
-На момент hw-9
+<h2>hw-9</h2>
 Для работы с данными используется Redux Thunk, навигация по страницам с помощью Roter.
+<br/>
 Для запуска (localhost:3000)
-1) npm run dev
-2) npm run start-server
+<ul>
+  <li>Консоль 1: npm run dev</li>
+  <li>Консоль 2: npm run start-server</li>
+</ul>
 
-На момент hw-10
+<h2>hw-10</h2>
 Для работы с данными используется Redux Toolkit (RTK query)
 
-На момент hw-12
+<h2>hw-12</h2>
 Проект целиком переведён на Next (серверный рендеринг).
+<br/>
 Для запуска (localhost:3001)
-1) npm run dev
-2) npm run start-server
+<ul>
+  <li>Консоль 1: npm run dev</li>
+  <li>Консоль 2: npm run start-server</li>
+</ul>
