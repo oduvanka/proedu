@@ -1,6 +1,8 @@
+"use client";
+
 import { useContext } from "react";
 import { AuthContext } from "./auth-context";
-import { Button } from "../button/button";
+import { Button } from "@/button/button";
 
 export const AuthButton = ({ isSmall }) => {
   const { auth, toogleAuth } = useContext(AuthContext);

@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext } from "react";
 
 export const INIT_AUTH = { isAuthorized: false };

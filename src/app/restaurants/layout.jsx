@@ -1,11 +1,3 @@
-import Restaurants from "../../components/restaurants/restaurants";
-
-const RestaurantsLayout = ({ children }) => {
-  return (
-    <div>
-      <Restaurants>{children}</Restaurants>
-    </div>
-  );
-};
+import RestaurantsLayout from "@/components/restaurants/restaurants-layout";
 
 export default RestaurantsLayout;

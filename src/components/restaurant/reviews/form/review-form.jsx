@@ -1,70 +1,63 @@
-import { Counter } from "../../../counter/counter";
-import { MAX_RATING, MIN_RATING, STEP_RATING } from "./const";
-import { useFormReview } from "./use-form-review";
-import styles from "./form.module.css";
-import { Button } from "../../../button/button";
-import { useContext, useEffect } from "react";
-import { AuthContext } from "../../../auth/auth-context";
+"use client";
 
-export const ReviewForm = ({ isFeedbackSubmission, onSubmitForm }) => {
+import { useActionState, useContext } from "react";
+import { useFormStatus } from "react-dom";
+import { MAX_RATING } from "./const";
+import styles from "./form.module.css";
+import { Button } from "@/button/button";
+import { AuthContext } from "@/auth/auth-context";
+import { Rating } from "./rating";
+
+export const ReviewForm = ({ submitFormAction }) => {
   const { auth } = useContext(AuthContext);
 
-  const { form, onChangeName, onChangeText, onChangeRating, clear } =
-    useFormReview();
+  const [formState, submitAction] = useActionState(submitFormAction, {
+    name: auth.name,
+    text: "it`s wonderful",
+    rating: MAX_RATING,
+  });
 
-  useEffect(() => {
-    onChangeName({ target: { value: auth.name } });
-  }, [auth.name]);
+  const { pending } = useFormStatus();
 
-  const { name, text, rating } = form;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmitForm(form).then(() => clear());
-  };
+  const { name, text, rating } = formState;
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form action={submitAction} className={styles.form}>
       <p>Leave your review</p>
       <div className={styles.formGroup}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
+          name="name"
           type="text"
           disabled
           required
-          value={name}
-          onChange={onChangeName}
+          defaultValue={name}
         />
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="text">Text:</label>
         <textarea
           id="text"
-          disabled={isFeedbackSubmission}
+          name="text"
+          disabled={pending}
           required
-          value={text}
-          onChange={onChangeText}
+          defaultValue={text}
           className={styles.reviewText}
         />
       </div>
       <div className={styles.formGroup}>
         <label>Rating:</label>
-        <Counter
-          count={rating}
-          min={MIN_RATING}
-          max={MAX_RATING}
-          disabledButtons={isFeedbackSubmission}
-          onDecrement={onChangeRating(rating - STEP_RATING)}
-          onIncrement={onChangeRating(rating + STEP_RATING)}
-        />
+        <Rating rating={rating} isDisabledButtons={pending} />
       </div>
 
+      {formState.error && <div style={styles.errors}>{formState.error}</div>}
+
       <div className={styles.buttonToolbar}>
-        <Button type="button" disabled={isFeedbackSubmission} onClick={clear}>
+        <Button disabled={pending} formAction={() => submitAction(null)}>
           Clear
         </Button>
-        <Button disabled={isFeedbackSubmission} type="submit">
+        <Button type="submit" disabled={pending}>
           Submit
         </Button>
       </div>

@@ -1,16 +1,14 @@
-import { useGetUsersQuery } from "../../../redux/api";
+import { use } from "react";
 import { Review } from "./rewiew";
+import { UsersContext } from "../../users/users-context";
 
 export const ReviewContainer = ({ review }) => {
   const { userId, text, rating } = review;
 
-  const { data: user } = useGetUsersQuery(undefined, {
-    selectFromResult: (result) => ({
-      ...result,
-      data: result.data.find(({ id }) => id === userId),
-    }),
-  });
-  const { name } = user;
+  const { users } = use(UsersContext);
+  const user = users.find((item) => item.id === userId);
+
+  const { name } = !!user ? user : { name: "Mr. X" };
 
   return <Review name={name} text={text} rating={rating} />;
 };

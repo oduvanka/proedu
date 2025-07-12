@@ -5,7 +5,7 @@ import {
 } from "../../redux/entities/cart/slice";
 import styles from "./cart.module.css";
 import { DishInCart } from "./dish-in-cart";
-import { CURRENCY } from "../app/const";
+import { CURRENCY } from "@/globalconst";
 
 export const Cart = () => {
   const items = useSelector(selectCartItems);
@@ -19,9 +19,9 @@ export const Cart = () => {
         Cart = {sum} {CURRENCY}
       </h3>
       <ul className={styles.cartItems}>
-        {items.map(({ id, amount }) => (
+        {items.map(({ id, name, amount, price }) => (
           <li key={id} className={styles.cartItem}>
-            <DishInCart id={id} amount={amount} />
+            <DishInCart id={id} name={name} amount={amount} price={price} />
           </li>
         ))}
       </ul>

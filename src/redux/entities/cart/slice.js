@@ -5,9 +5,9 @@ export const cartSlice = createSlice({
   initialState: {},
   reducers: {
     addToCart: (state, { payload }) => {
-      const { id, price } = payload;
+      const { id, name, price } = payload;
 
-      if (!state[id]) state[id] = { amount: 0, price };
+      if (!state[id]) state[id] = { name, amount: 0, price };
 
       state[id].amount = state[id].amount + 1;
     },
@@ -30,7 +30,12 @@ const selectCartSlice = (state) => state[cartSlice.name];
 
 export const selectCartItems = createSelector([selectCartSlice], (cartSlice) =>
   Object.keys(cartSlice).reduce((acc, id) => {
-    acc.push({ id, amount: cartSlice[id].amount, price: cartSlice[id].price });
+    acc.push({
+      id,
+      name: cartSlice[id].name,
+      amount: cartSlice[id].amount,
+      price: cartSlice[id].price,
+    });
     return acc;
   }, [])
 );

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { REQUEST_STATUS } from "../../../components/app/const.js";
+import { REQUEST_STATUS } from "@/globalconst";
 
 export const requestSlice = createSlice({
   name: "requestSlice",

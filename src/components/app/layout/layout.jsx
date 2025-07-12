@@ -6,7 +6,7 @@ import { ProgressBar } from "../../progress-bar/progress-bar";
 import { Footer } from "../footer/footer";
 import { Header } from "../header/header";
 import { Cart } from "../../cart/cart";
-import { AuthContext } from "../../auth/auth-context";
+import { AuthContext } from "@/auth/auth-context";
 
 export const Layout = ({ children }) => {
   const contentRef = useRef(null);

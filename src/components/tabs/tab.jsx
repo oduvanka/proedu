@@ -1,7 +1,9 @@
+"use client";
+
 import { useContext } from "react";
 import Link from "next/link";
 import styles from "./tabs.module.css";
-import { THEMES, ThemeContext } from "../theme/theme-context";
+import { THEMES, ThemeContext } from "@/theme/theme-context";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
 

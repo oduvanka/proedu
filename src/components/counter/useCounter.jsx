@@ -6,7 +6,7 @@ import {
   selectItemAmountById,
 } from "../../redux/entities/cart/slice";
 
-export const useCounter = (dishId, dishPrice) => {
+export const useCounter = (dishId, dishName, dishPrice) => {
   const amount = useSelector((state) => selectItemAmountById(state, dishId));
   const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ export const useCounter = (dishId, dishPrice) => {
     [dispatch, dishId]
   );
   const onIncrement = useCallback(() => {
-    dispatch(addToCart({ id: dishId, price: dishPrice }));
+    dispatch(addToCart({ id: dishId, name: dishName, price: dishPrice }));
   }, [dispatch, dishId]);
   return { count: amount, onDecrement, onIncrement };
 };

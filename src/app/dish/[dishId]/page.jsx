@@ -1,20 +1,15 @@
-import { notFound } from "next/navigation";
-import { REQUEST_URL, SERVER } from "../../../components/app/const";
-import { Dish } from "../../../components/restaurant/menu/dish";
+import DishPage from "@/components/pages/dish-page";
+import { getDishById } from "@/services/get-dish-by-id";
 
-const Page = async ({ params }) => {
+export const generateMetadata = async ({ params }) => {
   const { dishId } = await params;
 
-  const result = await fetch(`${SERVER}${REQUEST_URL.DISH}/${dishId}`);
-  const dish = await result.json();
+  const { data } = await getDishById(dishId);
 
-  if (!dish) notFound();
-
-  const { id, name, ingredients, price } = dish;
-
-  return (
-    <Dish dishId={id} name={name} ingredients={ingredients} price={price} />
-  );
+  if (data)
+    return {
+      title: data.name,
+    };
 };
 
-export default Page;
+export default DishPage;

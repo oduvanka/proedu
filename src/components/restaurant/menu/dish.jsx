@@ -7,8 +7,8 @@ import styles from "./menu.module.css";
 import { Counter } from "../../counter/counter";
 import { useCounter } from "../../counter/useCounter";
 import { MAX_COUNT, MIN_COUNT } from "./const";
-import { AuthContext } from "../../auth/auth-context";
-import { CURRENCY } from "../../app/const";
+import { AuthContext } from "@/auth/auth-context";
+import { CURRENCY } from "@/globalconst";
 
 // Карточка блюда
 export const Dish = ({ dishId, name, ingredients, price }) => {
@@ -16,7 +16,7 @@ export const Dish = ({ dishId, name, ingredients, price }) => {
 
   const pathname = usePathname();
 
-  const { count, onDecrement, onIncrement } = useCounter(dishId, price);
+  const { count, onDecrement, onIncrement } = useCounter(dishId, name, price);
 
   return (
     <div className={styles.card}>
